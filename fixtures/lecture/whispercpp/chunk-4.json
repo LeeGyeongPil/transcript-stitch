@@ -1,0 +1,296 @@
+{
+  "task": "transcribe",
+  "language": "en",
+  "duration": 13.25,
+  "text": " After a month we draw a chart of the temperature for every single day. The chart shows warm afternoons, cool nights and one very windy weekend. Then we compare th",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.35,
+      "end": 13.5,
+      "text": " After a month we draw a chart of the temperature for every single day. The chart shows warm afternoons, cool nights and one very windy weekend. Then we compare th",
+      "words": [
+        {
+          "word": "[_BEG_]",
+          "start": 0.35,
+          "end": 0.35,
+          "t_dtw": -1,
+          "probability": 1
+        },
+        {
+          "word": " After",
+          "start": 0.35,
+          "end": 0.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " a",
+          "start": 0.75,
+          "end": 1.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " month",
+          "start": 1.15,
+          "end": 1.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " we",
+          "start": 1.55,
+          "end": 1.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " draw",
+          "start": 1.95,
+          "end": 2.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " a",
+          "start": 2.35,
+          "end": 2.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " chart",
+          "start": 2.75,
+          "end": 3.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " of",
+          "start": 3.15,
+          "end": 3.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 3.55,
+          "end": 3.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " temper",
+          "start": 3.95,
+          "end": 4.13,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ature",
+          "start": 4.13,
+          "end": 4.3,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " for",
+          "start": 4.35,
+          "end": 4.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " every",
+          "start": 4.75,
+          "end": 5.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " sin",
+          "start": 5.15,
+          "end": 5.33,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "gle",
+          "start": 5.33,
+          "end": 5.5,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " day",
+          "start": 5.55,
+          "end": 5.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 5.9,
+          "end": 5.9,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " The",
+          "start": 6.55,
+          "end": 6.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " chart",
+          "start": 6.95,
+          "end": 7.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " shows",
+          "start": 7.35,
+          "end": 7.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " warm",
+          "start": 7.75,
+          "end": 8.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " after",
+          "start": 8.15,
+          "end": 8.33,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "noons",
+          "start": 8.33,
+          "end": 8.5,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 8.5,
+          "end": 8.5,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " cool",
+          "start": 8.55,
+          "end": 8.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " nig",
+          "start": 8.95,
+          "end": 9.13,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "hts",
+          "start": 9.13,
+          "end": 9.3,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " and",
+          "start": 9.35,
+          "end": 9.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " one",
+          "start": 9.75,
+          "end": 10.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " very",
+          "start": 10.15,
+          "end": 10.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " windy",
+          "start": 10.55,
+          "end": 10.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " week",
+          "start": 10.95,
+          "end": 11.13,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "end",
+          "start": 11.13,
+          "end": 11.3,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ".",
+          "start": 11.3,
+          "end": 11.3,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Then",
+          "start": 11.95,
+          "end": 12.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " we",
+          "start": 12.35,
+          "end": 12.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " comp",
+          "start": 12.75,
+          "end": 12.93,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "are",
+          "start": 12.93,
+          "end": 13.1,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " th",
+          "start": 13.15,
+          "end": 13.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        }
+      ]
+    }
+  ]
+}

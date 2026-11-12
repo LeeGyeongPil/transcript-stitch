@@ -1,0 +1,146 @@
+{
+  "note": "Practice mock data: the known sentence the chunk responses were synthesized from.",
+  "text": "long recordings must be split before upload each chunk is transcribed on its own then the pieces are stitched back together without duplicates or gaps at every boundary",
+  "words": [
+    {
+      "text": "long",
+      "startMs": 0,
+      "endMs": 350
+    },
+    {
+      "text": "recordings",
+      "startMs": 400,
+      "endMs": 750
+    },
+    {
+      "text": "must",
+      "startMs": 800,
+      "endMs": 1150
+    },
+    {
+      "text": "be",
+      "startMs": 1200,
+      "endMs": 1550
+    },
+    {
+      "text": "split",
+      "startMs": 1600,
+      "endMs": 1950
+    },
+    {
+      "text": "before",
+      "startMs": 2000,
+      "endMs": 2350
+    },
+    {
+      "text": "upload",
+      "startMs": 2400,
+      "endMs": 2750
+    },
+    {
+      "text": "each",
+      "startMs": 2800,
+      "endMs": 3150
+    },
+    {
+      "text": "chunk",
+      "startMs": 3200,
+      "endMs": 3550
+    },
+    {
+      "text": "is",
+      "startMs": 3600,
+      "endMs": 3950
+    },
+    {
+      "text": "transcribed",
+      "startMs": 4000,
+      "endMs": 4350
+    },
+    {
+      "text": "on",
+      "startMs": 4400,
+      "endMs": 4750
+    },
+    {
+      "text": "its",
+      "startMs": 4800,
+      "endMs": 5150
+    },
+    {
+      "text": "own",
+      "startMs": 5200,
+      "endMs": 5550
+    },
+    {
+      "text": "then",
+      "startMs": 5600,
+      "endMs": 5950
+    },
+    {
+      "text": "the",
+      "startMs": 6000,
+      "endMs": 6350
+    },
+    {
+      "text": "pieces",
+      "startMs": 6400,
+      "endMs": 6750
+    },
+    {
+      "text": "are",
+      "startMs": 6800,
+      "endMs": 7150
+    },
+    {
+      "text": "stitched",
+      "startMs": 7200,
+      "endMs": 7550
+    },
+    {
+      "text": "back",
+      "startMs": 7600,
+      "endMs": 7950
+    },
+    {
+      "text": "together",
+      "startMs": 8000,
+      "endMs": 8350
+    },
+    {
+      "text": "without",
+      "startMs": 8400,
+      "endMs": 8750
+    },
+    {
+      "text": "duplicates",
+      "startMs": 8800,
+      "endMs": 9150
+    },
+    {
+      "text": "or",
+      "startMs": 9200,
+      "endMs": 9550
+    },
+    {
+      "text": "gaps",
+      "startMs": 9600,
+      "endMs": 9950
+    },
+    {
+      "text": "at",
+      "startMs": 10000,
+      "endMs": 10350
+    },
+    {
+      "text": "every",
+      "startMs": 10400,
+      "endMs": 10750
+    },
+    {
+      "text": "boundary",
+      "startMs": 10800,
+      "endMs": 11150
+    }
+  ]
+}

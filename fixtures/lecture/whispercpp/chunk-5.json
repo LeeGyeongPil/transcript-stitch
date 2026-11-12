@@ -1,0 +1,534 @@
+{
+  "task": "transcribe",
+  "language": "en",
+  "duration": 22.15,
+  "text": " Then, we compare the chart with the forecast from the local weather service. Sometimes the forecast wins and sometimes our small station wins. We measure, we log, we measure, we log, and that habit is the whole project. Thank you for following along, and see you in the next workshop.",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.2,
+      "end": 21.95,
+      "text": " Then, we compare the chart with the forecast from the local weather service. Sometimes the forecast wins and sometimes our small station wins. We measure, we log, we measure, we log, and that habit is the whole project. Thank you for following along, and see you in the next workshop.",
+      "words": [
+        {
+          "word": "[_BEG_]",
+          "start": 0.2,
+          "end": 0.2,
+          "t_dtw": -1,
+          "probability": 1
+        },
+        {
+          "word": " Then",
+          "start": 0.2,
+          "end": 0.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 0.55,
+          "end": 0.55,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " we",
+          "start": 0.6,
+          "end": 0.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " comp",
+          "start": 1,
+          "end": 1.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "are",
+          "start": 1.18,
+          "end": 1.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " the",
+          "start": 1.4,
+          "end": 1.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " chart",
+          "start": 1.8,
+          "end": 2.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " with",
+          "start": 2.2,
+          "end": 2.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 2.6,
+          "end": 2.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " fore",
+          "start": 3,
+          "end": 3.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "cast",
+          "start": 3.18,
+          "end": 3.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " from",
+          "start": 3.4,
+          "end": 3.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 3.8,
+          "end": 4.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " local",
+          "start": 4.2,
+          "end": 4.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " weat",
+          "start": 4.6,
+          "end": 4.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "her",
+          "start": 4.78,
+          "end": 4.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " serv",
+          "start": 5,
+          "end": 5.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ice",
+          "start": 5.18,
+          "end": 5.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ".",
+          "start": 5.35,
+          "end": 5.35,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Somet",
+          "start": 6,
+          "end": 6.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "imes",
+          "start": 6.18,
+          "end": 6.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " the",
+          "start": 6.4,
+          "end": 6.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " fore",
+          "start": 6.8,
+          "end": 6.98,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "cast",
+          "start": 6.98,
+          "end": 7.15,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " wins",
+          "start": 7.2,
+          "end": 7.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " and",
+          "start": 7.6,
+          "end": 7.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " somet",
+          "start": 8,
+          "end": 8.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "imes",
+          "start": 8.18,
+          "end": 8.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " our",
+          "start": 8.4,
+          "end": 8.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " small",
+          "start": 8.8,
+          "end": 9.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " stat",
+          "start": 9.2,
+          "end": 9.38,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ion",
+          "start": 9.38,
+          "end": 9.55,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " wins",
+          "start": 9.6,
+          "end": 9.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 9.95,
+          "end": 9.95,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " We",
+          "start": 10.6,
+          "end": 10.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " meas",
+          "start": 11,
+          "end": 11.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ure",
+          "start": 11.18,
+          "end": 11.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 11.35,
+          "end": 11.35,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " we",
+          "start": 11.4,
+          "end": 11.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " log",
+          "start": 11.8,
+          "end": 12.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 12.15,
+          "end": 12.15,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " we",
+          "start": 12.2,
+          "end": 12.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " meas",
+          "start": 12.6,
+          "end": 12.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ure",
+          "start": 12.78,
+          "end": 12.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 12.95,
+          "end": 12.95,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " we",
+          "start": 13,
+          "end": 13.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " log",
+          "start": 13.4,
+          "end": 13.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 13.75,
+          "end": 13.75,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " and",
+          "start": 13.8,
+          "end": 14.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " that",
+          "start": 14.2,
+          "end": 14.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " habit",
+          "start": 14.6,
+          "end": 14.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " is",
+          "start": 15,
+          "end": 15.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 15.4,
+          "end": 15.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " whole",
+          "start": 15.8,
+          "end": 16.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " proj",
+          "start": 16.2,
+          "end": 16.38,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ect",
+          "start": 16.38,
+          "end": 16.55,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ".",
+          "start": 16.55,
+          "end": 16.55,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Thank",
+          "start": 17.2,
+          "end": 17.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " you",
+          "start": 17.6,
+          "end": 17.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " for",
+          "start": 18,
+          "end": 18.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " follo",
+          "start": 18.4,
+          "end": 18.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "wing",
+          "start": 18.58,
+          "end": 18.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " along",
+          "start": 18.8,
+          "end": 19.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 19.15,
+          "end": 19.15,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " and",
+          "start": 19.2,
+          "end": 19.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " see",
+          "start": 19.6,
+          "end": 19.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " you",
+          "start": 20,
+          "end": 20.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " in",
+          "start": 20.4,
+          "end": 20.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 20.8,
+          "end": 21.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " next",
+          "start": 21.2,
+          "end": 21.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " work",
+          "start": 21.6,
+          "end": 21.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "shop",
+          "start": 21.78,
+          "end": 21.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ".",
+          "start": 21.95,
+          "end": 21.95,
+          "t_dtw": -1,
+          "probability": 0.8
+        }
+      ]
+    }
+  ]
+}

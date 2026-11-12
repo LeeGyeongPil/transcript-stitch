@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "file": "chunk-0.json",
+      "startMs": 0,
+      "endMs": 20500
+    },
+    {
+      "file": "chunk-1.json",
+      "startMs": 17500,
+      "endMs": 56450,
+      "overlapMs": 3000
+    },
+    {
+      "file": "chunk-2.json",
+      "startMs": 56450,
+      "endMs": 79700,
+      "overlapMs": 0
+    },
+    {
+      "file": "chunk-3.json",
+      "startMs": 78200,
+      "endMs": 113250,
+      "overlapMs": 1500
+    },
+    {
+      "file": "chunk-4.json",
+      "startMs": 113250,
+      "endMs": 126500,
+      "overlapMs": 0
+    },
+    {
+      "file": "chunk-5.json",
+      "startMs": 125000,
+      "endMs": 147150,
+      "overlapMs": 1500
+    }
+  ]
+}

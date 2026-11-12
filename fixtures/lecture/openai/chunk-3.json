@@ -1,0 +1,412 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 35.05,
+  "text": "Very, important, very important, never mount the board without a plastic cover. Rain finds every gap, so seal the cable hole with soft rubber. The board sends one message every five minutes to the home network. Each message holds the temperature, the wind speed and the battery level. On the receiving side a tiny program stores every message in a plain text file. A plain text file is easy to read, easy to copy and easy to back up.",
+  "words": [
+    {
+      "word": "Very,",
+      "start": 0.2,
+      "end": 0.55
+    },
+    {
+      "word": "important,",
+      "start": 0.6,
+      "end": 0.95
+    },
+    {
+      "word": "very",
+      "start": 1,
+      "end": 1.35
+    },
+    {
+      "word": "important,",
+      "start": 1.4,
+      "end": 1.75
+    },
+    {
+      "word": "never",
+      "start": 1.8,
+      "end": 2.15
+    },
+    {
+      "word": "mount",
+      "start": 2.2,
+      "end": 2.55
+    },
+    {
+      "word": "the",
+      "start": 2.6,
+      "end": 2.95
+    },
+    {
+      "word": "board",
+      "start": 3,
+      "end": 3.35
+    },
+    {
+      "word": "without",
+      "start": 3.4,
+      "end": 3.75
+    },
+    {
+      "word": "a",
+      "start": 3.8,
+      "end": 4.15
+    },
+    {
+      "word": "plastic",
+      "start": 4.2,
+      "end": 4.55
+    },
+    {
+      "word": "cover.",
+      "start": 4.6,
+      "end": 4.95
+    },
+    {
+      "word": "Rain",
+      "start": 5.6,
+      "end": 5.95
+    },
+    {
+      "word": "finds",
+      "start": 6,
+      "end": 6.35
+    },
+    {
+      "word": "every",
+      "start": 6.4,
+      "end": 6.75
+    },
+    {
+      "word": "gap,",
+      "start": 6.8,
+      "end": 7.15
+    },
+    {
+      "word": "so",
+      "start": 7.2,
+      "end": 7.55
+    },
+    {
+      "word": "seal",
+      "start": 7.6,
+      "end": 7.95
+    },
+    {
+      "word": "the",
+      "start": 8,
+      "end": 8.35
+    },
+    {
+      "word": "cable",
+      "start": 8.4,
+      "end": 8.75
+    },
+    {
+      "word": "hole",
+      "start": 8.8,
+      "end": 9.15
+    },
+    {
+      "word": "with",
+      "start": 9.2,
+      "end": 9.55
+    },
+    {
+      "word": "soft",
+      "start": 9.6,
+      "end": 9.95
+    },
+    {
+      "word": "rubber.",
+      "start": 10,
+      "end": 10.35
+    },
+    {
+      "word": "The",
+      "start": 11,
+      "end": 11.35
+    },
+    {
+      "word": "board",
+      "start": 11.4,
+      "end": 11.75
+    },
+    {
+      "word": "sends",
+      "start": 11.8,
+      "end": 12.15
+    },
+    {
+      "word": "one",
+      "start": 12.2,
+      "end": 12.55
+    },
+    {
+      "word": "message",
+      "start": 12.6,
+      "end": 12.95
+    },
+    {
+      "word": "every",
+      "start": 13,
+      "end": 13.35
+    },
+    {
+      "word": "five",
+      "start": 13.4,
+      "end": 13.75
+    },
+    {
+      "word": "minutes",
+      "start": 13.8,
+      "end": 14.15
+    },
+    {
+      "word": "to",
+      "start": 14.2,
+      "end": 14.55
+    },
+    {
+      "word": "the",
+      "start": 14.6,
+      "end": 14.95
+    },
+    {
+      "word": "home",
+      "start": 15,
+      "end": 15.35
+    },
+    {
+      "word": "network.",
+      "start": 15.4,
+      "end": 15.75
+    },
+    {
+      "word": "Each",
+      "start": 16.4,
+      "end": 16.75
+    },
+    {
+      "word": "message",
+      "start": 16.8,
+      "end": 17.15
+    },
+    {
+      "word": "holds",
+      "start": 17.2,
+      "end": 17.55
+    },
+    {
+      "word": "the",
+      "start": 17.6,
+      "end": 17.95
+    },
+    {
+      "word": "temperature,",
+      "start": 18,
+      "end": 18.35
+    },
+    {
+      "word": "the",
+      "start": 18.4,
+      "end": 18.75
+    },
+    {
+      "word": "wind",
+      "start": 18.8,
+      "end": 19.15
+    },
+    {
+      "word": "speed",
+      "start": 19.2,
+      "end": 19.55
+    },
+    {
+      "word": "and",
+      "start": 19.6,
+      "end": 19.95
+    },
+    {
+      "word": "the",
+      "start": 20,
+      "end": 20.35
+    },
+    {
+      "word": "battery",
+      "start": 20.4,
+      "end": 20.75
+    },
+    {
+      "word": "level.",
+      "start": 20.8,
+      "end": 21.15
+    },
+    {
+      "word": "On",
+      "start": 21.8,
+      "end": 22.15
+    },
+    {
+      "word": "the",
+      "start": 22.2,
+      "end": 22.55
+    },
+    {
+      "word": "receiving",
+      "start": 22.6,
+      "end": 22.95
+    },
+    {
+      "word": "side",
+      "start": 23,
+      "end": 23.35
+    },
+    {
+      "word": "a",
+      "start": 23.4,
+      "end": 23.75
+    },
+    {
+      "word": "tiny",
+      "start": 23.8,
+      "end": 24.15
+    },
+    {
+      "word": "program",
+      "start": 24.2,
+      "end": 24.55
+    },
+    {
+      "word": "stores",
+      "start": 24.6,
+      "end": 24.95
+    },
+    {
+      "word": "every",
+      "start": 25,
+      "end": 25.35
+    },
+    {
+      "word": "message",
+      "start": 25.4,
+      "end": 25.75
+    },
+    {
+      "word": "in",
+      "start": 25.8,
+      "end": 26.15
+    },
+    {
+      "word": "a",
+      "start": 26.2,
+      "end": 26.55
+    },
+    {
+      "word": "plain",
+      "start": 26.6,
+      "end": 26.95
+    },
+    {
+      "word": "text",
+      "start": 27,
+      "end": 27.35
+    },
+    {
+      "word": "file.",
+      "start": 27.4,
+      "end": 27.75
+    },
+    {
+      "word": "A",
+      "start": 28.4,
+      "end": 28.75
+    },
+    {
+      "word": "plain",
+      "start": 28.8,
+      "end": 29.15
+    },
+    {
+      "word": "text",
+      "start": 29.2,
+      "end": 29.55
+    },
+    {
+      "word": "file",
+      "start": 29.6,
+      "end": 29.95
+    },
+    {
+      "word": "is",
+      "start": 30,
+      "end": 30.35
+    },
+    {
+      "word": "easy",
+      "start": 30.4,
+      "end": 30.75
+    },
+    {
+      "word": "to",
+      "start": 30.8,
+      "end": 31.15
+    },
+    {
+      "word": "read,",
+      "start": 31.2,
+      "end": 31.55
+    },
+    {
+      "word": "easy",
+      "start": 31.6,
+      "end": 31.95
+    },
+    {
+      "word": "to",
+      "start": 32,
+      "end": 32.35
+    },
+    {
+      "word": "copy",
+      "start": 32.4,
+      "end": 32.75
+    },
+    {
+      "word": "and",
+      "start": 32.8,
+      "end": 33.15
+    },
+    {
+      "word": "easy",
+      "start": 33.2,
+      "end": 33.55
+    },
+    {
+      "word": "to",
+      "start": 33.6,
+      "end": 33.95
+    },
+    {
+      "word": "back",
+      "start": 34,
+      "end": 34.35
+    },
+    {
+      "word": "up.",
+      "start": 34.4,
+      "end": 34.75
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.2,
+      "end": 34.75,
+      "text": "Very, important, very important, never mount the board without a plastic cover. Rain finds every gap, so seal the cable hole with soft rubber. The board sends one message every five minutes to the home network. Each message holds the temperature, the wind speed and the battery level. On the receiving side a tiny program stores every message in a plain text file. A plain text file is easy to read, easy to copy and easy to back up."
+    }
+  ]
+}

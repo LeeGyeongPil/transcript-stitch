@@ -1,0 +1,485 @@
+{
+  "task": "transcribe",
+  "language": "en",
+  "duration": 23.25,
+  "text": " Now let us talk about power. A small solar panel and one battery can run the whole station for weeks. On cloudy days the battery carries the load, and on sunny days the panel fills it again. Check the battery voltage once a day for the first week. Very important, very im",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.35,
+      "end": 23.5,
+      "text": " Now let us talk about power. A small solar panel and one battery can run the whole station for weeks. On cloudy days the battery carries the load, and on sunny days the panel fills it again. Check the battery voltage once a day for the first week. Very important, very im",
+      "words": [
+        {
+          "word": "[_BEG_]",
+          "start": 0.35,
+          "end": 0.35,
+          "t_dtw": -1,
+          "probability": 1
+        },
+        {
+          "word": " Now",
+          "start": 0.35,
+          "end": 0.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " let",
+          "start": 0.75,
+          "end": 1.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " us",
+          "start": 1.15,
+          "end": 1.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " talk",
+          "start": 1.55,
+          "end": 1.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " about",
+          "start": 1.95,
+          "end": 2.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " power",
+          "start": 2.35,
+          "end": 2.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 2.7,
+          "end": 2.7,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " A",
+          "start": 3.35,
+          "end": 3.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " small",
+          "start": 3.75,
+          "end": 4.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " solar",
+          "start": 4.15,
+          "end": 4.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " panel",
+          "start": 4.55,
+          "end": 4.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " and",
+          "start": 4.95,
+          "end": 5.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " one",
+          "start": 5.35,
+          "end": 5.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " batt",
+          "start": 5.75,
+          "end": 5.93,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ery",
+          "start": 5.93,
+          "end": 6.1,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " can",
+          "start": 6.15,
+          "end": 6.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " run",
+          "start": 6.55,
+          "end": 6.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 6.95,
+          "end": 7.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " whole",
+          "start": 7.35,
+          "end": 7.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " stat",
+          "start": 7.75,
+          "end": 7.93,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ion",
+          "start": 7.93,
+          "end": 8.1,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " for",
+          "start": 8.15,
+          "end": 8.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " weeks",
+          "start": 8.55,
+          "end": 8.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 8.9,
+          "end": 8.9,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " On",
+          "start": 9.55,
+          "end": 9.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " clo",
+          "start": 9.95,
+          "end": 10.13,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "udy",
+          "start": 10.13,
+          "end": 10.3,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " days",
+          "start": 10.35,
+          "end": 10.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 10.75,
+          "end": 11.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " batt",
+          "start": 11.15,
+          "end": 11.33,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ery",
+          "start": 11.33,
+          "end": 11.5,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " carr",
+          "start": 11.55,
+          "end": 11.73,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ies",
+          "start": 11.73,
+          "end": 11.9,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " the",
+          "start": 11.95,
+          "end": 12.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " load",
+          "start": 12.35,
+          "end": 12.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 12.7,
+          "end": 12.7,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " and",
+          "start": 12.75,
+          "end": 13.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " on",
+          "start": 13.15,
+          "end": 13.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " sunny",
+          "start": 13.55,
+          "end": 13.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " days",
+          "start": 13.95,
+          "end": 14.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 14.35,
+          "end": 14.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " panel",
+          "start": 14.75,
+          "end": 15.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " fills",
+          "start": 15.15,
+          "end": 15.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " it",
+          "start": 15.55,
+          "end": 15.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " again",
+          "start": 15.95,
+          "end": 16.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 16.3,
+          "end": 16.3,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Check",
+          "start": 16.95,
+          "end": 17.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 17.35,
+          "end": 17.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " batt",
+          "start": 17.75,
+          "end": 17.93,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ery",
+          "start": 17.93,
+          "end": 18.1,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " volt",
+          "start": 18.15,
+          "end": 18.33,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "age",
+          "start": 18.33,
+          "end": 18.5,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " once",
+          "start": 18.55,
+          "end": 18.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " a",
+          "start": 18.95,
+          "end": 19.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " day",
+          "start": 19.35,
+          "end": 19.7,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " for",
+          "start": 19.75,
+          "end": 20.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 20.15,
+          "end": 20.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " first",
+          "start": 20.55,
+          "end": 20.9,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " week",
+          "start": 20.95,
+          "end": 21.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 21.3,
+          "end": 21.3,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Very",
+          "start": 21.95,
+          "end": 22.3,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " impor",
+          "start": 22.35,
+          "end": 22.53,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "tant",
+          "start": 22.53,
+          "end": 22.7,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 22.7,
+          "end": 22.7,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " very",
+          "start": 22.75,
+          "end": 23.1,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " im",
+          "start": 23.15,
+          "end": 23.5,
+          "t_dtw": -1,
+          "probability": 0.92
+        }
+      ]
+    }
+  ]
+}

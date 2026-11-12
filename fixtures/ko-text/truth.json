@@ -1,0 +1,186 @@
+{
+  "note": "Practice mock data: the known sentence the chunk responses were synthesized from.",
+  "text": "긴 녹음은 음성 인식 서비스에 보내기 전에 여러 조각으로 나누어야 합니다. 각 조각은 따로 받아쓰기를 한 다음 하나로 다시 이어 붙입니다. 이때 겹친 부분의 단어가 두 번 나오지 않도록 주의해야 합니다. 마지막으로 자막 파일을 만들어 확인합니다.",
+  "words": [
+    {
+      "text": "긴",
+      "startMs": 0,
+      "endMs": 450
+    },
+    {
+      "text": "녹음은",
+      "startMs": 500,
+      "endMs": 950
+    },
+    {
+      "text": "음성",
+      "startMs": 1000,
+      "endMs": 1450
+    },
+    {
+      "text": "인식",
+      "startMs": 1500,
+      "endMs": 1950
+    },
+    {
+      "text": "서비스에",
+      "startMs": 2000,
+      "endMs": 2450
+    },
+    {
+      "text": "보내기",
+      "startMs": 2500,
+      "endMs": 2950
+    },
+    {
+      "text": "전에",
+      "startMs": 3000,
+      "endMs": 3450
+    },
+    {
+      "text": "여러",
+      "startMs": 3500,
+      "endMs": 3950
+    },
+    {
+      "text": "조각으로",
+      "startMs": 4000,
+      "endMs": 4450
+    },
+    {
+      "text": "나누어야",
+      "startMs": 4500,
+      "endMs": 4950
+    },
+    {
+      "text": "합니다.",
+      "startMs": 5000,
+      "endMs": 5450
+    },
+    {
+      "text": "각",
+      "startMs": 5500,
+      "endMs": 5950
+    },
+    {
+      "text": "조각은",
+      "startMs": 6000,
+      "endMs": 6450
+    },
+    {
+      "text": "따로",
+      "startMs": 6500,
+      "endMs": 6950
+    },
+    {
+      "text": "받아쓰기를",
+      "startMs": 7000,
+      "endMs": 7450
+    },
+    {
+      "text": "한",
+      "startMs": 7500,
+      "endMs": 7950
+    },
+    {
+      "text": "다음",
+      "startMs": 8000,
+      "endMs": 8450
+    },
+    {
+      "text": "하나로",
+      "startMs": 8500,
+      "endMs": 8950
+    },
+    {
+      "text": "다시",
+      "startMs": 9000,
+      "endMs": 9450
+    },
+    {
+      "text": "이어",
+      "startMs": 9500,
+      "endMs": 9950
+    },
+    {
+      "text": "붙입니다.",
+      "startMs": 10000,
+      "endMs": 10450
+    },
+    {
+      "text": "이때",
+      "startMs": 10500,
+      "endMs": 10950
+    },
+    {
+      "text": "겹친",
+      "startMs": 11000,
+      "endMs": 11450
+    },
+    {
+      "text": "부분의",
+      "startMs": 11500,
+      "endMs": 11950
+    },
+    {
+      "text": "단어가",
+      "startMs": 12000,
+      "endMs": 12450
+    },
+    {
+      "text": "두",
+      "startMs": 12500,
+      "endMs": 12950
+    },
+    {
+      "text": "번",
+      "startMs": 13000,
+      "endMs": 13450
+    },
+    {
+      "text": "나오지",
+      "startMs": 13500,
+      "endMs": 13950
+    },
+    {
+      "text": "않도록",
+      "startMs": 14000,
+      "endMs": 14450
+    },
+    {
+      "text": "주의해야",
+      "startMs": 14500,
+      "endMs": 14950
+    },
+    {
+      "text": "합니다.",
+      "startMs": 15000,
+      "endMs": 15450
+    },
+    {
+      "text": "마지막으로",
+      "startMs": 15500,
+      "endMs": 15950
+    },
+    {
+      "text": "자막",
+      "startMs": 16000,
+      "endMs": 16450
+    },
+    {
+      "text": "파일을",
+      "startMs": 16500,
+      "endMs": 16950
+    },
+    {
+      "text": "만들어",
+      "startMs": 17000,
+      "endMs": 17450
+    },
+    {
+      "text": "확인합니다.",
+      "startMs": 17500,
+      "endMs": 17950
+    }
+  ]
+}

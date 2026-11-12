@@ -1,0 +1,1656 @@
+{
+  "note": "Practice mock data: the known sentence the chunk responses were synthesized from.",
+  "text": "Welcome back to the workshop. Today we are building a small weather station for the roof. First we need a sensor that reads the temperature every ten seconds. The sensor is cheap, so we will buy two and compare them. We measure, we log, we measure, we log, and then we compare the numbers. If the numbers disagree by more than a degree, one sensor is wrong. Next comes the wind gauge, which is just a spinning cup on a short pole. Every turn of the cup closes a switch and the board counts the turns. More turns per minute means more wind, and we turn that into meters per second. Keep the pole away from the chimney, because warm air from the chimney spoils the readings. Now let us talk about power. A small solar panel and one battery can run the whole station for weeks. On cloudy days the battery carries the load, and on sunny days the panel fills it again. Check the battery voltage once a day for the first week. Very important, very important, never mount the board without a plastic cover. Rain finds every gap, so seal the cable hole with soft rubber. The board sends one message every five minutes to the home network. Each message holds the temperature, the wind speed and the battery level. On the receiving side a tiny program stores every message in a plain text file. A plain text file is easy to read, easy to copy and easy to back up. After a month we draw a chart of the temperature for every single day. The chart shows warm afternoons, cool nights and one very windy weekend. Then we compare the chart with the forecast from the local weather service. Sometimes the forecast wins and sometimes our small station wins. We measure, we log, we measure, we log, and that habit is the whole project. Thank you for following along, and see you in the next workshop.",
+  "words": [
+    {
+      "text": "Welcome",
+      "startMs": 0,
+      "endMs": 350
+    },
+    {
+      "text": "back",
+      "startMs": 400,
+      "endMs": 750
+    },
+    {
+      "text": "to",
+      "startMs": 800,
+      "endMs": 1150
+    },
+    {
+      "text": "the",
+      "startMs": 1200,
+      "endMs": 1550
+    },
+    {
+      "text": "workshop.",
+      "startMs": 1600,
+      "endMs": 1950
+    },
+    {
+      "text": "Today",
+      "startMs": 2600,
+      "endMs": 2950
+    },
+    {
+      "text": "we",
+      "startMs": 3000,
+      "endMs": 3350
+    },
+    {
+      "text": "are",
+      "startMs": 3400,
+      "endMs": 3750
+    },
+    {
+      "text": "building",
+      "startMs": 3800,
+      "endMs": 4150
+    },
+    {
+      "text": "a",
+      "startMs": 4200,
+      "endMs": 4550
+    },
+    {
+      "text": "small",
+      "startMs": 4600,
+      "endMs": 4950
+    },
+    {
+      "text": "weather",
+      "startMs": 5000,
+      "endMs": 5350
+    },
+    {
+      "text": "station",
+      "startMs": 5400,
+      "endMs": 5750
+    },
+    {
+      "text": "for",
+      "startMs": 5800,
+      "endMs": 6150
+    },
+    {
+      "text": "the",
+      "startMs": 6200,
+      "endMs": 6550
+    },
+    {
+      "text": "roof.",
+      "startMs": 6600,
+      "endMs": 6950
+    },
+    {
+      "text": "First",
+      "startMs": 7600,
+      "endMs": 7950
+    },
+    {
+      "text": "we",
+      "startMs": 8000,
+      "endMs": 8350
+    },
+    {
+      "text": "need",
+      "startMs": 8400,
+      "endMs": 8750
+    },
+    {
+      "text": "a",
+      "startMs": 8800,
+      "endMs": 9150
+    },
+    {
+      "text": "sensor",
+      "startMs": 9200,
+      "endMs": 9550
+    },
+    {
+      "text": "that",
+      "startMs": 9600,
+      "endMs": 9950
+    },
+    {
+      "text": "reads",
+      "startMs": 10000,
+      "endMs": 10350
+    },
+    {
+      "text": "the",
+      "startMs": 10400,
+      "endMs": 10750
+    },
+    {
+      "text": "temperature",
+      "startMs": 10800,
+      "endMs": 11150
+    },
+    {
+      "text": "every",
+      "startMs": 11200,
+      "endMs": 11550
+    },
+    {
+      "text": "ten",
+      "startMs": 11600,
+      "endMs": 11950
+    },
+    {
+      "text": "seconds.",
+      "startMs": 12000,
+      "endMs": 12350
+    },
+    {
+      "text": "The",
+      "startMs": 13000,
+      "endMs": 13350
+    },
+    {
+      "text": "sensor",
+      "startMs": 13400,
+      "endMs": 13750
+    },
+    {
+      "text": "is",
+      "startMs": 13800,
+      "endMs": 14150
+    },
+    {
+      "text": "cheap,",
+      "startMs": 14200,
+      "endMs": 14550
+    },
+    {
+      "text": "so",
+      "startMs": 14600,
+      "endMs": 14950
+    },
+    {
+      "text": "we",
+      "startMs": 15000,
+      "endMs": 15350
+    },
+    {
+      "text": "will",
+      "startMs": 15400,
+      "endMs": 15750
+    },
+    {
+      "text": "buy",
+      "startMs": 15800,
+      "endMs": 16150
+    },
+    {
+      "text": "two",
+      "startMs": 16200,
+      "endMs": 16550
+    },
+    {
+      "text": "and",
+      "startMs": 16600,
+      "endMs": 16950
+    },
+    {
+      "text": "compare",
+      "startMs": 17000,
+      "endMs": 17350
+    },
+    {
+      "text": "them.",
+      "startMs": 17400,
+      "endMs": 17750
+    },
+    {
+      "text": "We",
+      "startMs": 18400,
+      "endMs": 18750
+    },
+    {
+      "text": "measure,",
+      "startMs": 18800,
+      "endMs": 19150
+    },
+    {
+      "text": "we",
+      "startMs": 19200,
+      "endMs": 19550
+    },
+    {
+      "text": "log,",
+      "startMs": 19600,
+      "endMs": 19950
+    },
+    {
+      "text": "we",
+      "startMs": 20000,
+      "endMs": 20350
+    },
+    {
+      "text": "measure,",
+      "startMs": 20400,
+      "endMs": 20750
+    },
+    {
+      "text": "we",
+      "startMs": 20800,
+      "endMs": 21150
+    },
+    {
+      "text": "log,",
+      "startMs": 21200,
+      "endMs": 21550
+    },
+    {
+      "text": "and",
+      "startMs": 21600,
+      "endMs": 21950
+    },
+    {
+      "text": "then",
+      "startMs": 22000,
+      "endMs": 22350
+    },
+    {
+      "text": "we",
+      "startMs": 22400,
+      "endMs": 22750
+    },
+    {
+      "text": "compare",
+      "startMs": 22800,
+      "endMs": 23150
+    },
+    {
+      "text": "the",
+      "startMs": 23200,
+      "endMs": 23550
+    },
+    {
+      "text": "numbers.",
+      "startMs": 23600,
+      "endMs": 23950
+    },
+    {
+      "text": "If",
+      "startMs": 24600,
+      "endMs": 24950
+    },
+    {
+      "text": "the",
+      "startMs": 25000,
+      "endMs": 25350
+    },
+    {
+      "text": "numbers",
+      "startMs": 25400,
+      "endMs": 25750
+    },
+    {
+      "text": "disagree",
+      "startMs": 25800,
+      "endMs": 26150
+    },
+    {
+      "text": "by",
+      "startMs": 26200,
+      "endMs": 26550
+    },
+    {
+      "text": "more",
+      "startMs": 26600,
+      "endMs": 26950
+    },
+    {
+      "text": "than",
+      "startMs": 27000,
+      "endMs": 27350
+    },
+    {
+      "text": "a",
+      "startMs": 27400,
+      "endMs": 27750
+    },
+    {
+      "text": "degree,",
+      "startMs": 27800,
+      "endMs": 28150
+    },
+    {
+      "text": "one",
+      "startMs": 28200,
+      "endMs": 28550
+    },
+    {
+      "text": "sensor",
+      "startMs": 28600,
+      "endMs": 28950
+    },
+    {
+      "text": "is",
+      "startMs": 29000,
+      "endMs": 29350
+    },
+    {
+      "text": "wrong.",
+      "startMs": 29400,
+      "endMs": 29750
+    },
+    {
+      "text": "Next",
+      "startMs": 30400,
+      "endMs": 30750
+    },
+    {
+      "text": "comes",
+      "startMs": 30800,
+      "endMs": 31150
+    },
+    {
+      "text": "the",
+      "startMs": 31200,
+      "endMs": 31550
+    },
+    {
+      "text": "wind",
+      "startMs": 31600,
+      "endMs": 31950
+    },
+    {
+      "text": "gauge,",
+      "startMs": 32000,
+      "endMs": 32350
+    },
+    {
+      "text": "which",
+      "startMs": 32400,
+      "endMs": 32750
+    },
+    {
+      "text": "is",
+      "startMs": 32800,
+      "endMs": 33150
+    },
+    {
+      "text": "just",
+      "startMs": 33200,
+      "endMs": 33550
+    },
+    {
+      "text": "a",
+      "startMs": 33600,
+      "endMs": 33950
+    },
+    {
+      "text": "spinning",
+      "startMs": 34000,
+      "endMs": 34350
+    },
+    {
+      "text": "cup",
+      "startMs": 34400,
+      "endMs": 34750
+    },
+    {
+      "text": "on",
+      "startMs": 34800,
+      "endMs": 35150
+    },
+    {
+      "text": "a",
+      "startMs": 35200,
+      "endMs": 35550
+    },
+    {
+      "text": "short",
+      "startMs": 35600,
+      "endMs": 35950
+    },
+    {
+      "text": "pole.",
+      "startMs": 36000,
+      "endMs": 36350
+    },
+    {
+      "text": "Every",
+      "startMs": 37000,
+      "endMs": 37350
+    },
+    {
+      "text": "turn",
+      "startMs": 37400,
+      "endMs": 37750
+    },
+    {
+      "text": "of",
+      "startMs": 37800,
+      "endMs": 38150
+    },
+    {
+      "text": "the",
+      "startMs": 38200,
+      "endMs": 38550
+    },
+    {
+      "text": "cup",
+      "startMs": 38600,
+      "endMs": 38950
+    },
+    {
+      "text": "closes",
+      "startMs": 39000,
+      "endMs": 39350
+    },
+    {
+      "text": "a",
+      "startMs": 39400,
+      "endMs": 39750
+    },
+    {
+      "text": "switch",
+      "startMs": 39800,
+      "endMs": 40150
+    },
+    {
+      "text": "and",
+      "startMs": 40200,
+      "endMs": 40550
+    },
+    {
+      "text": "the",
+      "startMs": 40600,
+      "endMs": 40950
+    },
+    {
+      "text": "board",
+      "startMs": 41000,
+      "endMs": 41350
+    },
+    {
+      "text": "counts",
+      "startMs": 41400,
+      "endMs": 41750
+    },
+    {
+      "text": "the",
+      "startMs": 41800,
+      "endMs": 42150
+    },
+    {
+      "text": "turns.",
+      "startMs": 42200,
+      "endMs": 42550
+    },
+    {
+      "text": "More",
+      "startMs": 43200,
+      "endMs": 43550
+    },
+    {
+      "text": "turns",
+      "startMs": 43600,
+      "endMs": 43950
+    },
+    {
+      "text": "per",
+      "startMs": 44000,
+      "endMs": 44350
+    },
+    {
+      "text": "minute",
+      "startMs": 44400,
+      "endMs": 44750
+    },
+    {
+      "text": "means",
+      "startMs": 44800,
+      "endMs": 45150
+    },
+    {
+      "text": "more",
+      "startMs": 45200,
+      "endMs": 45550
+    },
+    {
+      "text": "wind,",
+      "startMs": 45600,
+      "endMs": 45950
+    },
+    {
+      "text": "and",
+      "startMs": 46000,
+      "endMs": 46350
+    },
+    {
+      "text": "we",
+      "startMs": 46400,
+      "endMs": 46750
+    },
+    {
+      "text": "turn",
+      "startMs": 46800,
+      "endMs": 47150
+    },
+    {
+      "text": "that",
+      "startMs": 47200,
+      "endMs": 47550
+    },
+    {
+      "text": "into",
+      "startMs": 47600,
+      "endMs": 47950
+    },
+    {
+      "text": "meters",
+      "startMs": 48000,
+      "endMs": 48350
+    },
+    {
+      "text": "per",
+      "startMs": 48400,
+      "endMs": 48750
+    },
+    {
+      "text": "second.",
+      "startMs": 48800,
+      "endMs": 49150
+    },
+    {
+      "text": "Keep",
+      "startMs": 49800,
+      "endMs": 50150
+    },
+    {
+      "text": "the",
+      "startMs": 50200,
+      "endMs": 50550
+    },
+    {
+      "text": "pole",
+      "startMs": 50600,
+      "endMs": 50950
+    },
+    {
+      "text": "away",
+      "startMs": 51000,
+      "endMs": 51350
+    },
+    {
+      "text": "from",
+      "startMs": 51400,
+      "endMs": 51750
+    },
+    {
+      "text": "the",
+      "startMs": 51800,
+      "endMs": 52150
+    },
+    {
+      "text": "chimney,",
+      "startMs": 52200,
+      "endMs": 52550
+    },
+    {
+      "text": "because",
+      "startMs": 52600,
+      "endMs": 52950
+    },
+    {
+      "text": "warm",
+      "startMs": 53000,
+      "endMs": 53350
+    },
+    {
+      "text": "air",
+      "startMs": 53400,
+      "endMs": 53750
+    },
+    {
+      "text": "from",
+      "startMs": 53800,
+      "endMs": 54150
+    },
+    {
+      "text": "the",
+      "startMs": 54200,
+      "endMs": 54550
+    },
+    {
+      "text": "chimney",
+      "startMs": 54600,
+      "endMs": 54950
+    },
+    {
+      "text": "spoils",
+      "startMs": 55000,
+      "endMs": 55350
+    },
+    {
+      "text": "the",
+      "startMs": 55400,
+      "endMs": 55750
+    },
+    {
+      "text": "readings.",
+      "startMs": 55800,
+      "endMs": 56150
+    },
+    {
+      "text": "Now",
+      "startMs": 56800,
+      "endMs": 57150
+    },
+    {
+      "text": "let",
+      "startMs": 57200,
+      "endMs": 57550
+    },
+    {
+      "text": "us",
+      "startMs": 57600,
+      "endMs": 57950
+    },
+    {
+      "text": "talk",
+      "startMs": 58000,
+      "endMs": 58350
+    },
+    {
+      "text": "about",
+      "startMs": 58400,
+      "endMs": 58750
+    },
+    {
+      "text": "power.",
+      "startMs": 58800,
+      "endMs": 59150
+    },
+    {
+      "text": "A",
+      "startMs": 59800,
+      "endMs": 60150
+    },
+    {
+      "text": "small",
+      "startMs": 60200,
+      "endMs": 60550
+    },
+    {
+      "text": "solar",
+      "startMs": 60600,
+      "endMs": 60950
+    },
+    {
+      "text": "panel",
+      "startMs": 61000,
+      "endMs": 61350
+    },
+    {
+      "text": "and",
+      "startMs": 61400,
+      "endMs": 61750
+    },
+    {
+      "text": "one",
+      "startMs": 61800,
+      "endMs": 62150
+    },
+    {
+      "text": "battery",
+      "startMs": 62200,
+      "endMs": 62550
+    },
+    {
+      "text": "can",
+      "startMs": 62600,
+      "endMs": 62950
+    },
+    {
+      "text": "run",
+      "startMs": 63000,
+      "endMs": 63350
+    },
+    {
+      "text": "the",
+      "startMs": 63400,
+      "endMs": 63750
+    },
+    {
+      "text": "whole",
+      "startMs": 63800,
+      "endMs": 64150
+    },
+    {
+      "text": "station",
+      "startMs": 64200,
+      "endMs": 64550
+    },
+    {
+      "text": "for",
+      "startMs": 64600,
+      "endMs": 64950
+    },
+    {
+      "text": "weeks.",
+      "startMs": 65000,
+      "endMs": 65350
+    },
+    {
+      "text": "On",
+      "startMs": 66000,
+      "endMs": 66350
+    },
+    {
+      "text": "cloudy",
+      "startMs": 66400,
+      "endMs": 66750
+    },
+    {
+      "text": "days",
+      "startMs": 66800,
+      "endMs": 67150
+    },
+    {
+      "text": "the",
+      "startMs": 67200,
+      "endMs": 67550
+    },
+    {
+      "text": "battery",
+      "startMs": 67600,
+      "endMs": 67950
+    },
+    {
+      "text": "carries",
+      "startMs": 68000,
+      "endMs": 68350
+    },
+    {
+      "text": "the",
+      "startMs": 68400,
+      "endMs": 68750
+    },
+    {
+      "text": "load,",
+      "startMs": 68800,
+      "endMs": 69150
+    },
+    {
+      "text": "and",
+      "startMs": 69200,
+      "endMs": 69550
+    },
+    {
+      "text": "on",
+      "startMs": 69600,
+      "endMs": 69950
+    },
+    {
+      "text": "sunny",
+      "startMs": 70000,
+      "endMs": 70350
+    },
+    {
+      "text": "days",
+      "startMs": 70400,
+      "endMs": 70750
+    },
+    {
+      "text": "the",
+      "startMs": 70800,
+      "endMs": 71150
+    },
+    {
+      "text": "panel",
+      "startMs": 71200,
+      "endMs": 71550
+    },
+    {
+      "text": "fills",
+      "startMs": 71600,
+      "endMs": 71950
+    },
+    {
+      "text": "it",
+      "startMs": 72000,
+      "endMs": 72350
+    },
+    {
+      "text": "again.",
+      "startMs": 72400,
+      "endMs": 72750
+    },
+    {
+      "text": "Check",
+      "startMs": 73400,
+      "endMs": 73750
+    },
+    {
+      "text": "the",
+      "startMs": 73800,
+      "endMs": 74150
+    },
+    {
+      "text": "battery",
+      "startMs": 74200,
+      "endMs": 74550
+    },
+    {
+      "text": "voltage",
+      "startMs": 74600,
+      "endMs": 74950
+    },
+    {
+      "text": "once",
+      "startMs": 75000,
+      "endMs": 75350
+    },
+    {
+      "text": "a",
+      "startMs": 75400,
+      "endMs": 75750
+    },
+    {
+      "text": "day",
+      "startMs": 75800,
+      "endMs": 76150
+    },
+    {
+      "text": "for",
+      "startMs": 76200,
+      "endMs": 76550
+    },
+    {
+      "text": "the",
+      "startMs": 76600,
+      "endMs": 76950
+    },
+    {
+      "text": "first",
+      "startMs": 77000,
+      "endMs": 77350
+    },
+    {
+      "text": "week.",
+      "startMs": 77400,
+      "endMs": 77750
+    },
+    {
+      "text": "Very",
+      "startMs": 78400,
+      "endMs": 78750
+    },
+    {
+      "text": "important,",
+      "startMs": 78800,
+      "endMs": 79150
+    },
+    {
+      "text": "very",
+      "startMs": 79200,
+      "endMs": 79550
+    },
+    {
+      "text": "important,",
+      "startMs": 79600,
+      "endMs": 79950
+    },
+    {
+      "text": "never",
+      "startMs": 80000,
+      "endMs": 80350
+    },
+    {
+      "text": "mount",
+      "startMs": 80400,
+      "endMs": 80750
+    },
+    {
+      "text": "the",
+      "startMs": 80800,
+      "endMs": 81150
+    },
+    {
+      "text": "board",
+      "startMs": 81200,
+      "endMs": 81550
+    },
+    {
+      "text": "without",
+      "startMs": 81600,
+      "endMs": 81950
+    },
+    {
+      "text": "a",
+      "startMs": 82000,
+      "endMs": 82350
+    },
+    {
+      "text": "plastic",
+      "startMs": 82400,
+      "endMs": 82750
+    },
+    {
+      "text": "cover.",
+      "startMs": 82800,
+      "endMs": 83150
+    },
+    {
+      "text": "Rain",
+      "startMs": 83800,
+      "endMs": 84150
+    },
+    {
+      "text": "finds",
+      "startMs": 84200,
+      "endMs": 84550
+    },
+    {
+      "text": "every",
+      "startMs": 84600,
+      "endMs": 84950
+    },
+    {
+      "text": "gap,",
+      "startMs": 85000,
+      "endMs": 85350
+    },
+    {
+      "text": "so",
+      "startMs": 85400,
+      "endMs": 85750
+    },
+    {
+      "text": "seal",
+      "startMs": 85800,
+      "endMs": 86150
+    },
+    {
+      "text": "the",
+      "startMs": 86200,
+      "endMs": 86550
+    },
+    {
+      "text": "cable",
+      "startMs": 86600,
+      "endMs": 86950
+    },
+    {
+      "text": "hole",
+      "startMs": 87000,
+      "endMs": 87350
+    },
+    {
+      "text": "with",
+      "startMs": 87400,
+      "endMs": 87750
+    },
+    {
+      "text": "soft",
+      "startMs": 87800,
+      "endMs": 88150
+    },
+    {
+      "text": "rubber.",
+      "startMs": 88200,
+      "endMs": 88550
+    },
+    {
+      "text": "The",
+      "startMs": 89200,
+      "endMs": 89550
+    },
+    {
+      "text": "board",
+      "startMs": 89600,
+      "endMs": 89950
+    },
+    {
+      "text": "sends",
+      "startMs": 90000,
+      "endMs": 90350
+    },
+    {
+      "text": "one",
+      "startMs": 90400,
+      "endMs": 90750
+    },
+    {
+      "text": "message",
+      "startMs": 90800,
+      "endMs": 91150
+    },
+    {
+      "text": "every",
+      "startMs": 91200,
+      "endMs": 91550
+    },
+    {
+      "text": "five",
+      "startMs": 91600,
+      "endMs": 91950
+    },
+    {
+      "text": "minutes",
+      "startMs": 92000,
+      "endMs": 92350
+    },
+    {
+      "text": "to",
+      "startMs": 92400,
+      "endMs": 92750
+    },
+    {
+      "text": "the",
+      "startMs": 92800,
+      "endMs": 93150
+    },
+    {
+      "text": "home",
+      "startMs": 93200,
+      "endMs": 93550
+    },
+    {
+      "text": "network.",
+      "startMs": 93600,
+      "endMs": 93950
+    },
+    {
+      "text": "Each",
+      "startMs": 94600,
+      "endMs": 94950
+    },
+    {
+      "text": "message",
+      "startMs": 95000,
+      "endMs": 95350
+    },
+    {
+      "text": "holds",
+      "startMs": 95400,
+      "endMs": 95750
+    },
+    {
+      "text": "the",
+      "startMs": 95800,
+      "endMs": 96150
+    },
+    {
+      "text": "temperature,",
+      "startMs": 96200,
+      "endMs": 96550
+    },
+    {
+      "text": "the",
+      "startMs": 96600,
+      "endMs": 96950
+    },
+    {
+      "text": "wind",
+      "startMs": 97000,
+      "endMs": 97350
+    },
+    {
+      "text": "speed",
+      "startMs": 97400,
+      "endMs": 97750
+    },
+    {
+      "text": "and",
+      "startMs": 97800,
+      "endMs": 98150
+    },
+    {
+      "text": "the",
+      "startMs": 98200,
+      "endMs": 98550
+    },
+    {
+      "text": "battery",
+      "startMs": 98600,
+      "endMs": 98950
+    },
+    {
+      "text": "level.",
+      "startMs": 99000,
+      "endMs": 99350
+    },
+    {
+      "text": "On",
+      "startMs": 100000,
+      "endMs": 100350
+    },
+    {
+      "text": "the",
+      "startMs": 100400,
+      "endMs": 100750
+    },
+    {
+      "text": "receiving",
+      "startMs": 100800,
+      "endMs": 101150
+    },
+    {
+      "text": "side",
+      "startMs": 101200,
+      "endMs": 101550
+    },
+    {
+      "text": "a",
+      "startMs": 101600,
+      "endMs": 101950
+    },
+    {
+      "text": "tiny",
+      "startMs": 102000,
+      "endMs": 102350
+    },
+    {
+      "text": "program",
+      "startMs": 102400,
+      "endMs": 102750
+    },
+    {
+      "text": "stores",
+      "startMs": 102800,
+      "endMs": 103150
+    },
+    {
+      "text": "every",
+      "startMs": 103200,
+      "endMs": 103550
+    },
+    {
+      "text": "message",
+      "startMs": 103600,
+      "endMs": 103950
+    },
+    {
+      "text": "in",
+      "startMs": 104000,
+      "endMs": 104350
+    },
+    {
+      "text": "a",
+      "startMs": 104400,
+      "endMs": 104750
+    },
+    {
+      "text": "plain",
+      "startMs": 104800,
+      "endMs": 105150
+    },
+    {
+      "text": "text",
+      "startMs": 105200,
+      "endMs": 105550
+    },
+    {
+      "text": "file.",
+      "startMs": 105600,
+      "endMs": 105950
+    },
+    {
+      "text": "A",
+      "startMs": 106600,
+      "endMs": 106950
+    },
+    {
+      "text": "plain",
+      "startMs": 107000,
+      "endMs": 107350
+    },
+    {
+      "text": "text",
+      "startMs": 107400,
+      "endMs": 107750
+    },
+    {
+      "text": "file",
+      "startMs": 107800,
+      "endMs": 108150
+    },
+    {
+      "text": "is",
+      "startMs": 108200,
+      "endMs": 108550
+    },
+    {
+      "text": "easy",
+      "startMs": 108600,
+      "endMs": 108950
+    },
+    {
+      "text": "to",
+      "startMs": 109000,
+      "endMs": 109350
+    },
+    {
+      "text": "read,",
+      "startMs": 109400,
+      "endMs": 109750
+    },
+    {
+      "text": "easy",
+      "startMs": 109800,
+      "endMs": 110150
+    },
+    {
+      "text": "to",
+      "startMs": 110200,
+      "endMs": 110550
+    },
+    {
+      "text": "copy",
+      "startMs": 110600,
+      "endMs": 110950
+    },
+    {
+      "text": "and",
+      "startMs": 111000,
+      "endMs": 111350
+    },
+    {
+      "text": "easy",
+      "startMs": 111400,
+      "endMs": 111750
+    },
+    {
+      "text": "to",
+      "startMs": 111800,
+      "endMs": 112150
+    },
+    {
+      "text": "back",
+      "startMs": 112200,
+      "endMs": 112550
+    },
+    {
+      "text": "up.",
+      "startMs": 112600,
+      "endMs": 112950
+    },
+    {
+      "text": "After",
+      "startMs": 113600,
+      "endMs": 113950
+    },
+    {
+      "text": "a",
+      "startMs": 114000,
+      "endMs": 114350
+    },
+    {
+      "text": "month",
+      "startMs": 114400,
+      "endMs": 114750
+    },
+    {
+      "text": "we",
+      "startMs": 114800,
+      "endMs": 115150
+    },
+    {
+      "text": "draw",
+      "startMs": 115200,
+      "endMs": 115550
+    },
+    {
+      "text": "a",
+      "startMs": 115600,
+      "endMs": 115950
+    },
+    {
+      "text": "chart",
+      "startMs": 116000,
+      "endMs": 116350
+    },
+    {
+      "text": "of",
+      "startMs": 116400,
+      "endMs": 116750
+    },
+    {
+      "text": "the",
+      "startMs": 116800,
+      "endMs": 117150
+    },
+    {
+      "text": "temperature",
+      "startMs": 117200,
+      "endMs": 117550
+    },
+    {
+      "text": "for",
+      "startMs": 117600,
+      "endMs": 117950
+    },
+    {
+      "text": "every",
+      "startMs": 118000,
+      "endMs": 118350
+    },
+    {
+      "text": "single",
+      "startMs": 118400,
+      "endMs": 118750
+    },
+    {
+      "text": "day.",
+      "startMs": 118800,
+      "endMs": 119150
+    },
+    {
+      "text": "The",
+      "startMs": 119800,
+      "endMs": 120150
+    },
+    {
+      "text": "chart",
+      "startMs": 120200,
+      "endMs": 120550
+    },
+    {
+      "text": "shows",
+      "startMs": 120600,
+      "endMs": 120950
+    },
+    {
+      "text": "warm",
+      "startMs": 121000,
+      "endMs": 121350
+    },
+    {
+      "text": "afternoons,",
+      "startMs": 121400,
+      "endMs": 121750
+    },
+    {
+      "text": "cool",
+      "startMs": 121800,
+      "endMs": 122150
+    },
+    {
+      "text": "nights",
+      "startMs": 122200,
+      "endMs": 122550
+    },
+    {
+      "text": "and",
+      "startMs": 122600,
+      "endMs": 122950
+    },
+    {
+      "text": "one",
+      "startMs": 123000,
+      "endMs": 123350
+    },
+    {
+      "text": "very",
+      "startMs": 123400,
+      "endMs": 123750
+    },
+    {
+      "text": "windy",
+      "startMs": 123800,
+      "endMs": 124150
+    },
+    {
+      "text": "weekend.",
+      "startMs": 124200,
+      "endMs": 124550
+    },
+    {
+      "text": "Then",
+      "startMs": 125200,
+      "endMs": 125550
+    },
+    {
+      "text": "we",
+      "startMs": 125600,
+      "endMs": 125950
+    },
+    {
+      "text": "compare",
+      "startMs": 126000,
+      "endMs": 126350
+    },
+    {
+      "text": "the",
+      "startMs": 126400,
+      "endMs": 126750
+    },
+    {
+      "text": "chart",
+      "startMs": 126800,
+      "endMs": 127150
+    },
+    {
+      "text": "with",
+      "startMs": 127200,
+      "endMs": 127550
+    },
+    {
+      "text": "the",
+      "startMs": 127600,
+      "endMs": 127950
+    },
+    {
+      "text": "forecast",
+      "startMs": 128000,
+      "endMs": 128350
+    },
+    {
+      "text": "from",
+      "startMs": 128400,
+      "endMs": 128750
+    },
+    {
+      "text": "the",
+      "startMs": 128800,
+      "endMs": 129150
+    },
+    {
+      "text": "local",
+      "startMs": 129200,
+      "endMs": 129550
+    },
+    {
+      "text": "weather",
+      "startMs": 129600,
+      "endMs": 129950
+    },
+    {
+      "text": "service.",
+      "startMs": 130000,
+      "endMs": 130350
+    },
+    {
+      "text": "Sometimes",
+      "startMs": 131000,
+      "endMs": 131350
+    },
+    {
+      "text": "the",
+      "startMs": 131400,
+      "endMs": 131750
+    },
+    {
+      "text": "forecast",
+      "startMs": 131800,
+      "endMs": 132150
+    },
+    {
+      "text": "wins",
+      "startMs": 132200,
+      "endMs": 132550
+    },
+    {
+      "text": "and",
+      "startMs": 132600,
+      "endMs": 132950
+    },
+    {
+      "text": "sometimes",
+      "startMs": 133000,
+      "endMs": 133350
+    },
+    {
+      "text": "our",
+      "startMs": 133400,
+      "endMs": 133750
+    },
+    {
+      "text": "small",
+      "startMs": 133800,
+      "endMs": 134150
+    },
+    {
+      "text": "station",
+      "startMs": 134200,
+      "endMs": 134550
+    },
+    {
+      "text": "wins.",
+      "startMs": 134600,
+      "endMs": 134950
+    },
+    {
+      "text": "We",
+      "startMs": 135600,
+      "endMs": 135950
+    },
+    {
+      "text": "measure,",
+      "startMs": 136000,
+      "endMs": 136350
+    },
+    {
+      "text": "we",
+      "startMs": 136400,
+      "endMs": 136750
+    },
+    {
+      "text": "log,",
+      "startMs": 136800,
+      "endMs": 137150
+    },
+    {
+      "text": "we",
+      "startMs": 137200,
+      "endMs": 137550
+    },
+    {
+      "text": "measure,",
+      "startMs": 137600,
+      "endMs": 137950
+    },
+    {
+      "text": "we",
+      "startMs": 138000,
+      "endMs": 138350
+    },
+    {
+      "text": "log,",
+      "startMs": 138400,
+      "endMs": 138750
+    },
+    {
+      "text": "and",
+      "startMs": 138800,
+      "endMs": 139150
+    },
+    {
+      "text": "that",
+      "startMs": 139200,
+      "endMs": 139550
+    },
+    {
+      "text": "habit",
+      "startMs": 139600,
+      "endMs": 139950
+    },
+    {
+      "text": "is",
+      "startMs": 140000,
+      "endMs": 140350
+    },
+    {
+      "text": "the",
+      "startMs": 140400,
+      "endMs": 140750
+    },
+    {
+      "text": "whole",
+      "startMs": 140800,
+      "endMs": 141150
+    },
+    {
+      "text": "project.",
+      "startMs": 141200,
+      "endMs": 141550
+    },
+    {
+      "text": "Thank",
+      "startMs": 142200,
+      "endMs": 142550
+    },
+    {
+      "text": "you",
+      "startMs": 142600,
+      "endMs": 142950
+    },
+    {
+      "text": "for",
+      "startMs": 143000,
+      "endMs": 143350
+    },
+    {
+      "text": "following",
+      "startMs": 143400,
+      "endMs": 143750
+    },
+    {
+      "text": "along,",
+      "startMs": 143800,
+      "endMs": 144150
+    },
+    {
+      "text": "and",
+      "startMs": 144200,
+      "endMs": 144550
+    },
+    {
+      "text": "see",
+      "startMs": 144600,
+      "endMs": 144950
+    },
+    {
+      "text": "you",
+      "startMs": 145000,
+      "endMs": 145350
+    },
+    {
+      "text": "in",
+      "startMs": 145400,
+      "endMs": 145750
+    },
+    {
+      "text": "the",
+      "startMs": 145800,
+      "endMs": 146150
+    },
+    {
+      "text": "next",
+      "startMs": 146200,
+      "endMs": 146550
+    },
+    {
+      "text": "workshop.",
+      "startMs": 146600,
+      "endMs": 146950
+    }
+  ]
+}

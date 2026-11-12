@@ -1,0 +1,247 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 20.5,
+  "text": "Welcome back to the workshop. Today we are building a small weather station for the roof. First we need a sensor that reads the temperature every ten seconds. The sensor is cheap, so we will buy two and compare them. We measure, we log, we me",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0,
+      "end": 0.35
+    },
+    {
+      "word": "back",
+      "start": 0.4,
+      "end": 0.75
+    },
+    {
+      "word": "to",
+      "start": 0.8,
+      "end": 1.15
+    },
+    {
+      "word": "the",
+      "start": 1.2,
+      "end": 1.55
+    },
+    {
+      "word": "workshop.",
+      "start": 1.6,
+      "end": 1.95
+    },
+    {
+      "word": "Today",
+      "start": 2.6,
+      "end": 2.95
+    },
+    {
+      "word": "we",
+      "start": 3,
+      "end": 3.35
+    },
+    {
+      "word": "are",
+      "start": 3.4,
+      "end": 3.75
+    },
+    {
+      "word": "building",
+      "start": 3.8,
+      "end": 4.15
+    },
+    {
+      "word": "a",
+      "start": 4.2,
+      "end": 4.55
+    },
+    {
+      "word": "small",
+      "start": 4.6,
+      "end": 4.95
+    },
+    {
+      "word": "weather",
+      "start": 5,
+      "end": 5.35
+    },
+    {
+      "word": "station",
+      "start": 5.4,
+      "end": 5.75
+    },
+    {
+      "word": "for",
+      "start": 5.8,
+      "end": 6.15
+    },
+    {
+      "word": "the",
+      "start": 6.2,
+      "end": 6.55
+    },
+    {
+      "word": "roof.",
+      "start": 6.6,
+      "end": 6.95
+    },
+    {
+      "word": "First",
+      "start": 7.6,
+      "end": 7.95
+    },
+    {
+      "word": "we",
+      "start": 8,
+      "end": 8.35
+    },
+    {
+      "word": "need",
+      "start": 8.4,
+      "end": 8.75
+    },
+    {
+      "word": "a",
+      "start": 8.8,
+      "end": 9.15
+    },
+    {
+      "word": "sensor",
+      "start": 9.2,
+      "end": 9.55
+    },
+    {
+      "word": "that",
+      "start": 9.6,
+      "end": 9.95
+    },
+    {
+      "word": "reads",
+      "start": 10,
+      "end": 10.35
+    },
+    {
+      "word": "the",
+      "start": 10.4,
+      "end": 10.75
+    },
+    {
+      "word": "temperature",
+      "start": 10.8,
+      "end": 11.15
+    },
+    {
+      "word": "every",
+      "start": 11.2,
+      "end": 11.55
+    },
+    {
+      "word": "ten",
+      "start": 11.6,
+      "end": 11.95
+    },
+    {
+      "word": "seconds.",
+      "start": 12,
+      "end": 12.35
+    },
+    {
+      "word": "The",
+      "start": 13,
+      "end": 13.35
+    },
+    {
+      "word": "sensor",
+      "start": 13.4,
+      "end": 13.75
+    },
+    {
+      "word": "is",
+      "start": 13.8,
+      "end": 14.15
+    },
+    {
+      "word": "cheap,",
+      "start": 14.2,
+      "end": 14.55
+    },
+    {
+      "word": "so",
+      "start": 14.6,
+      "end": 14.95
+    },
+    {
+      "word": "we",
+      "start": 15,
+      "end": 15.35
+    },
+    {
+      "word": "will",
+      "start": 15.4,
+      "end": 15.75
+    },
+    {
+      "word": "buy",
+      "start": 15.8,
+      "end": 16.15
+    },
+    {
+      "word": "two",
+      "start": 16.2,
+      "end": 16.55
+    },
+    {
+      "word": "and",
+      "start": 16.6,
+      "end": 16.95
+    },
+    {
+      "word": "compare",
+      "start": 17,
+      "end": 17.35
+    },
+    {
+      "word": "them.",
+      "start": 17.4,
+      "end": 17.75
+    },
+    {
+      "word": "We",
+      "start": 18.4,
+      "end": 18.75
+    },
+    {
+      "word": "measure,",
+      "start": 18.8,
+      "end": 19.15
+    },
+    {
+      "word": "we",
+      "start": 19.2,
+      "end": 19.55
+    },
+    {
+      "word": "log,",
+      "start": 19.6,
+      "end": 19.95
+    },
+    {
+      "word": "we",
+      "start": 20,
+      "end": 20.35
+    },
+    {
+      "word": "me",
+      "start": 20.4,
+      "end": 20.75
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 20.75,
+      "text": "Welcome back to the workshop. Today we are building a small weather station for the roof. First we need a sensor that reads the temperature every ten seconds. The sensor is cheap, so we will buy two and compare them. We measure, we log, we me"
+    }
+  ]
+}

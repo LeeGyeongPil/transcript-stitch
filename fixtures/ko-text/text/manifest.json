@@ -1,0 +1,21 @@
+{
+  "chunks": [
+    {
+      "file": "chunk-0.json",
+      "startMs": 0,
+      "endMs": 7000
+    },
+    {
+      "file": "chunk-1.json",
+      "startMs": 5500,
+      "endMs": 13000,
+      "overlapMs": 1500
+    },
+    {
+      "file": "chunk-2.json",
+      "startMs": 11500,
+      "endMs": 18150,
+      "overlapMs": 1500
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "task": "transcribe",
+  "language": "en",
+  "duration": 5.55,
+  "text": " Then, the pieces are stitched back together without duplicates or gaps at every boundary",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 5.45,
+      "text": " Then, the pieces are stitched back together without duplicates or gaps at every boundary",
+      "words": [
+        {
+          "word": "[_BEG_]",
+          "start": 0,
+          "end": 0,
+          "t_dtw": -1,
+          "probability": 1
+        },
+        {
+          "word": " Then",
+          "start": 0,
+          "end": 0.25,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 0.25,
+          "end": 0.25,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " the",
+          "start": 0.3,
+          "end": 0.65,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " pie",
+          "start": 0.7,
+          "end": 0.88,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ces",
+          "start": 0.88,
+          "end": 1.05,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " are",
+          "start": 1.1,
+          "end": 1.45,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " stit",
+          "start": 1.5,
+          "end": 1.68,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ched",
+          "start": 1.68,
+          "end": 1.85,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " back",
+          "start": 1.9,
+          "end": 2.25,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " toge",
+          "start": 2.3,
+          "end": 2.48,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ther",
+          "start": 2.48,
+          "end": 2.65,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " with",
+          "start": 2.7,
+          "end": 2.88,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "out",
+          "start": 2.88,
+          "end": 3.05,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " dupli",
+          "start": 3.1,
+          "end": 3.28,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "cates",
+          "start": 3.28,
+          "end": 3.45,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " or",
+          "start": 3.5,
+          "end": 3.85,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " gaps",
+          "start": 3.9,
+          "end": 4.25,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " at",
+          "start": 4.3,
+          "end": 4.65,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " every",
+          "start": 4.7,
+          "end": 5.05,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " boun",
+          "start": 5.1,
+          "end": 5.28,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "dary",
+          "start": 5.28,
+          "end": 5.45,
+          "t_dtw": -1,
+          "probability": 0.95
+        }
+      ]
+    }
+  ]
+}

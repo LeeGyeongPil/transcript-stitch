@@ -1,0 +1,52 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 2.6,
+  "text": "long recordings must be split before upl",
+  "words": [
+    {
+      "word": "long",
+      "start": 0,
+      "end": 0.35
+    },
+    {
+      "word": "recordings",
+      "start": 0.4,
+      "end": 0.75
+    },
+    {
+      "word": "must",
+      "start": 0.8,
+      "end": 1.15
+    },
+    {
+      "word": "be",
+      "start": 1.2,
+      "end": 1.55
+    },
+    {
+      "word": "split",
+      "start": 1.6,
+      "end": 1.95
+    },
+    {
+      "word": "before",
+      "start": 2,
+      "end": 2.35
+    },
+    {
+      "word": "upl",
+      "start": 2.4,
+      "end": 2.75
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 2.75,
+      "text": "long recordings must be split before upl"
+    }
+  ]
+}

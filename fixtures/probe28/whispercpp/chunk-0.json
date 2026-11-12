@@ -1,0 +1,86 @@
+{
+  "task": "transcribe",
+  "language": "en",
+  "duration": 2.6,
+  "text": " long recordings must be split before upl",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 2.75,
+      "text": " long recordings must be split before upl",
+      "words": [
+        {
+          "word": "[_BEG_]",
+          "start": 0,
+          "end": 0,
+          "t_dtw": -1,
+          "probability": 1
+        },
+        {
+          "word": " long",
+          "start": 0,
+          "end": 0.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " recor",
+          "start": 0.4,
+          "end": 0.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "dings",
+          "start": 0.58,
+          "end": 0.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " must",
+          "start": 0.8,
+          "end": 1.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " be",
+          "start": 1.2,
+          "end": 1.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " split",
+          "start": 1.6,
+          "end": 1.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " bef",
+          "start": 2,
+          "end": 2.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ore",
+          "start": 2.18,
+          "end": 2.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " upl",
+          "start": 2.4,
+          "end": 2.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        }
+      ]
+    }
+  ]
+}

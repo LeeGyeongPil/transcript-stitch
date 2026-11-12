@@ -1,0 +1,765 @@
+{
+  "task": "transcribe",
+  "language": "en",
+  "duration": 35.05,
+  "text": " Very, important, very important, never mount the board without a plastic cover. Rain finds every gap, so seal the cable hole with soft rubber. The board sends one message every five minutes to the home network. Each message holds the temperature, the wind speed and the battery level. On the receiving side a tiny program stores every message in a plain text file. A plain text file is easy to read, easy to copy and easy to back up.",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.2,
+      "end": 34.75,
+      "text": " Very, important, very important, never mount the board without a plastic cover. Rain finds every gap, so seal the cable hole with soft rubber. The board sends one message every five minutes to the home network. Each message holds the temperature, the wind speed and the battery level. On the receiving side a tiny program stores every message in a plain text file. A plain text file is easy to read, easy to copy and easy to back up.",
+      "words": [
+        {
+          "word": "[_BEG_]",
+          "start": 0.2,
+          "end": 0.2,
+          "t_dtw": -1,
+          "probability": 1
+        },
+        {
+          "word": " Very",
+          "start": 0.2,
+          "end": 0.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 0.55,
+          "end": 0.55,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " impor",
+          "start": 0.6,
+          "end": 0.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "tant",
+          "start": 0.78,
+          "end": 0.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 0.95,
+          "end": 0.95,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " very",
+          "start": 1,
+          "end": 1.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " impor",
+          "start": 1.4,
+          "end": 1.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "tant",
+          "start": 1.58,
+          "end": 1.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 1.75,
+          "end": 1.75,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " never",
+          "start": 1.8,
+          "end": 2.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " mount",
+          "start": 2.2,
+          "end": 2.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 2.6,
+          "end": 2.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " board",
+          "start": 3,
+          "end": 3.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " with",
+          "start": 3.4,
+          "end": 3.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "out",
+          "start": 3.58,
+          "end": 3.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " a",
+          "start": 3.8,
+          "end": 4.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " plas",
+          "start": 4.2,
+          "end": 4.38,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "tic",
+          "start": 4.38,
+          "end": 4.55,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " cover",
+          "start": 4.6,
+          "end": 4.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 4.95,
+          "end": 4.95,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Rain",
+          "start": 5.6,
+          "end": 5.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " finds",
+          "start": 6,
+          "end": 6.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " every",
+          "start": 6.4,
+          "end": 6.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " gap",
+          "start": 6.8,
+          "end": 7.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 7.15,
+          "end": 7.15,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " so",
+          "start": 7.2,
+          "end": 7.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " seal",
+          "start": 7.6,
+          "end": 7.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 8,
+          "end": 8.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " cable",
+          "start": 8.4,
+          "end": 8.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " hole",
+          "start": 8.8,
+          "end": 9.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " with",
+          "start": 9.2,
+          "end": 9.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " soft",
+          "start": 9.6,
+          "end": 9.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " rub",
+          "start": 10,
+          "end": 10.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ber",
+          "start": 10.18,
+          "end": 10.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ".",
+          "start": 10.35,
+          "end": 10.35,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " The",
+          "start": 11,
+          "end": 11.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " board",
+          "start": 11.4,
+          "end": 11.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " sends",
+          "start": 11.8,
+          "end": 12.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " one",
+          "start": 12.2,
+          "end": 12.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " mess",
+          "start": 12.6,
+          "end": 12.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "age",
+          "start": 12.78,
+          "end": 12.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " every",
+          "start": 13,
+          "end": 13.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " five",
+          "start": 13.4,
+          "end": 13.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " minu",
+          "start": 13.8,
+          "end": 13.98,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "tes",
+          "start": 13.98,
+          "end": 14.15,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " to",
+          "start": 14.2,
+          "end": 14.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 14.6,
+          "end": 14.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " home",
+          "start": 15,
+          "end": 15.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " netw",
+          "start": 15.4,
+          "end": 15.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ork",
+          "start": 15.58,
+          "end": 15.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ".",
+          "start": 15.75,
+          "end": 15.75,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " Each",
+          "start": 16.4,
+          "end": 16.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " mess",
+          "start": 16.8,
+          "end": 16.98,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "age",
+          "start": 16.98,
+          "end": 17.15,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " holds",
+          "start": 17.2,
+          "end": 17.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 17.6,
+          "end": 17.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " temper",
+          "start": 18,
+          "end": 18.18,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ature",
+          "start": 18.18,
+          "end": 18.35,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": ",",
+          "start": 18.35,
+          "end": 18.35,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " the",
+          "start": 18.4,
+          "end": 18.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " wind",
+          "start": 18.8,
+          "end": 19.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " speed",
+          "start": 19.2,
+          "end": 19.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " and",
+          "start": 19.6,
+          "end": 19.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 20,
+          "end": 20.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " batt",
+          "start": 20.4,
+          "end": 20.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ery",
+          "start": 20.58,
+          "end": 20.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " level",
+          "start": 20.8,
+          "end": 21.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 21.15,
+          "end": 21.15,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " On",
+          "start": 21.8,
+          "end": 22.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " the",
+          "start": 22.2,
+          "end": 22.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " recei",
+          "start": 22.6,
+          "end": 22.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ving",
+          "start": 22.78,
+          "end": 22.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " side",
+          "start": 23,
+          "end": 23.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " a",
+          "start": 23.4,
+          "end": 23.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " tiny",
+          "start": 23.8,
+          "end": 24.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " prog",
+          "start": 24.2,
+          "end": 24.38,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "ram",
+          "start": 24.38,
+          "end": 24.55,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " sto",
+          "start": 24.6,
+          "end": 24.78,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "res",
+          "start": 24.78,
+          "end": 24.95,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " every",
+          "start": 25,
+          "end": 25.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " mess",
+          "start": 25.4,
+          "end": 25.58,
+          "t_dtw": -1,
+          "probability": 0.9
+        },
+        {
+          "word": "age",
+          "start": 25.58,
+          "end": 25.75,
+          "t_dtw": -1,
+          "probability": 0.95
+        },
+        {
+          "word": " in",
+          "start": 25.8,
+          "end": 26.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " a",
+          "start": 26.2,
+          "end": 26.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " plain",
+          "start": 26.6,
+          "end": 26.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " text",
+          "start": 27,
+          "end": 27.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " file",
+          "start": 27.4,
+          "end": 27.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 27.75,
+          "end": 27.75,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " A",
+          "start": 28.4,
+          "end": 28.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " plain",
+          "start": 28.8,
+          "end": 29.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " text",
+          "start": 29.2,
+          "end": 29.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " file",
+          "start": 29.6,
+          "end": 29.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " is",
+          "start": 30,
+          "end": 30.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " easy",
+          "start": 30.4,
+          "end": 30.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " to",
+          "start": 30.8,
+          "end": 31.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " read",
+          "start": 31.2,
+          "end": 31.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ",",
+          "start": 31.55,
+          "end": 31.55,
+          "t_dtw": -1,
+          "probability": 0.8
+        },
+        {
+          "word": " easy",
+          "start": 31.6,
+          "end": 31.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " to",
+          "start": 32,
+          "end": 32.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " copy",
+          "start": 32.4,
+          "end": 32.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " and",
+          "start": 32.8,
+          "end": 33.15,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " easy",
+          "start": 33.2,
+          "end": 33.55,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " to",
+          "start": 33.6,
+          "end": 33.95,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " back",
+          "start": 34,
+          "end": 34.35,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": " up",
+          "start": 34.4,
+          "end": 34.75,
+          "t_dtw": -1,
+          "probability": 0.92
+        },
+        {
+          "word": ".",
+          "start": 34.75,
+          "end": 34.75,
+          "t_dtw": -1,
+          "probability": 0.8
+        }
+      ]
+    }
+  ]
+}
