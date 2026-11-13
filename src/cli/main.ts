@@ -20,7 +20,7 @@ import type { MessageKey } from './messages/en.js';
 import { reportText, warningLine } from './report.js';
 import { renderTable } from './table.js';
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.1.1';
 
 export interface CliContext {
   env: Env;

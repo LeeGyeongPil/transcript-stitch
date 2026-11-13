@@ -1,4 +1,5 @@
 import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { messages, resolveLang, t } from '../src/cli/i18n.js';
@@ -146,6 +147,8 @@ describe('AC-9: screens follow the language', () => {
   });
 
   it('prints the version', () => {
+    const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string };
+    expect(VERSION).toBe(pkg.version);
     expect(runCli(['--version']).out.trim()).toBe(VERSION);
     expect(runCli(['-v']).out.trim()).toBe(VERSION);
   });

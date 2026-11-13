@@ -5,6 +5,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-14
+
+### Changed
+- `--version` now reports the package version (0.1.0 printed a stale version number).
+- Docs: clarify that a `NO_MATCH` on text-only responses keeps both sides (they cannot be cut by time), so overlapped words may be duplicated; midpoint cut applies to timed responses.
+
 ## [0.1.0] - 2026-11-13
 
 ### Added
