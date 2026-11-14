@@ -95,7 +95,7 @@ every boundary
 
 ### 연습용 목(mock) 모드
 
-동봉한 `fixtures/` 는 **실제 API 에서 녹음한 응답이 아니라 연습용 목(mock) 응답**입니다. 정해진 문장에서 합성해 겹치게 자르고, 실제 조각 가장자리처럼 일부러 손상시켰습니다(잘린 단어, 대문자로 시작하는 첫 단어, 조각 시작보다 앞선 시각). 그래서 데모가 정답을 정확히 계산할 수 있습니다. 실제 API 응답은 다를 수 있습니다. 두 조각이 겹친 구간을 다르게 들으면 `stitch` 는 경고를 보고하고, 시각이 있는 응답은 겹침의 가운데에서 자릅니다(텍스트 전용 응답은 양쪽을 모두 남깁니다). [fixtures/README.md](fixtures/README.md) 를 보세요.
+동봉한 `fixtures/` 는 **실제 API 에서 녹음한 응답이 아니라 연습용 목(mock) 응답**입니다. 정해진 문장에서 합성해 겹치게 자르고, 실제 조각 가장자리처럼 일부러 손상시켰습니다(잘린 단어, 대문자로 시작하는 첫 단어, 조각 시작보다 앞선 시각). 그래서 데모가 정답을 정확히 계산할 수 있습니다. 실제 API 응답은 다를 수 있습니다. 두 조각이 겹친 구간을 다르게 들으면 `stitch` 는 경고를 보고하고, 시각이 있는 응답은 겹침의 가운데에서 자릅니다(텍스트 전용 응답은 양쪽을 모두 남깁니다). 선택 옵션 `fuzzy`(CLI `--fuzzy`)를 켜면 조금 다른 단어도 맞춥니다. [fixtures/README.md](fixtures/README.md) 를 보세요.
 
 ## 단계별 따라 하기
 
@@ -148,7 +148,7 @@ node dist/cli.js stitch --manifest fixtures/probe28/openai/manifest.json --forma
 1. **단위는 정수 밀리초 하나.** `normalize` 는 초 단위 응답을 정수 ms 로 반올림하고 `stitch` 는 조각 `startMs` 를 반올림해서, 부동소수 오차(`188595.00000000003`)가 1ms 틈이나 겹침을 만들지 못합니다.
 2. **겹침은 믿지 않고 계산합니다.** 실제 겹침 = 앞 조각의 `endMs` − 뒤 조각의 `startMs`. 분할 도구가 *보고한* 값은 `report.boundaries[].reportedOverlapMs` 에만 적고, 다르면 `REPORTED_OVERLAP_DIFFERS` 경고를 냅니다.
 3. **중복 제거 = 최장 공통 연속열.** 겹침 창 안에서 두 조각의 정규화한 단어를 비교해 가장 긴 공통 단어열을 찾고, 그 가운데에서 자릅니다. 잘린 조각(`upl`)은 온전한 단어(`upload`)에 밀립니다.
-4. **결과는 항상 냅니다.** 겹침에서 일치가 없으면, 시각이 있는(단어·구간) 응답은 겹침 가운데에서 자르고 `NO_MATCH` 경고를 붙입니다(`onNoMatch: 'keep-both'` 로 둘 다 남길 수도 있습니다). 텍스트 전용 응답은 시각이 없어 시간으로 자를 수 없으므로 양쪽을 모두 남기고(method `text`) `NO_MATCH` 경고를 붙이며, 겹친 단어가 중복으로 나올 수 있습니다.
+4. **결과는 항상 냅니다.** 겹침에서 일치가 없으면, 시각이 있는(단어·구간) 응답은 겹침 가운데에서 자르고 `NO_MATCH` 경고를 붙입니다(`onNoMatch: 'keep-both'` 로 둘 다 남길 수도 있습니다). 텍스트 전용 응답은 시각이 없어 시간으로 자를 수 없으므로 양쪽을 모두 남기고(method `text`) `NO_MATCH` 경고를 붙이며, 겹친 단어가 중복으로 나올 수 있습니다. 두 조각이 일부 단어만 조금 다르게 적었다면(`seconds` / `second`) 선택 옵션 `fuzzy: true`(CLI `--fuzzy`)가 유사도(Jaro-Winkler, 문턱값 0.85, `fuzzy` 에 0 초과 1 이하의 숫자를 줄 수도 있음)로 맞춥니다. 기본값은 끔이고, 3글자 미만 단어는 여전히 정확 일치만 보며, 반복 구절은 잘못 정렬될 수 있으니 보고서를 확인하세요.
 
 ```mermaid
 flowchart TD
@@ -170,7 +170,7 @@ flowchart TD
 |---|---|---|---|
 | `normalize(resp, { provider })` | 응답 하나(OpenAI·Groq `verbose_json`, whisper.cpp `verbose_json`, 텍스트만)를 공통 형식으로 바꿉니다. | `resp`, `provider`: `auto`(기본), `openai`, `groq`, `whispercpp`, `text` | `Transcript` |
 | `detectProvider(resp)` | 응답 형식을 추정합니다. | `resp` | `'openai' \| 'groq' \| 'whispercpp' \| 'text'` |
-| `stitch(chunks, opts)` | 시작 시각을 보정하고 중복을 없애 하나의 타임라인으로 합칩니다. | `chunks: { startMs, endMs?, result, provider?, overlapMs? }[]`; `opts`: `minMatchWords`, `windowSlackMs`, `maxWordDriftMs`, `onNoMatch` | `Stitched` (`Transcript` + `report`) |
+| `stitch(chunks, opts)` | 시작 시각을 보정하고 중복을 없애 하나의 타임라인으로 합칩니다. | `chunks: { startMs, endMs?, result, provider?, overlapMs? }[]`; `opts`: `minMatchWords`, `windowSlackMs`, `maxWordDriftMs`, `onNoMatch`, `fuzzy`(`false` 기본값, `true` 는 유사도 0.85, 또는 0 초과 1 이하의 문턱값) | `Stitched` (`Transcript` + `report`) |
 | `naiveConcat(chunks)` | 그냥 붙였을 때의 결과(비교·테스트용). | 같은 `chunks` | `Stitched` |
 | `toSrt` / `toVtt(t, opts)` | 자막 텍스트. 큐 번호는 1부터, 서로 겹치지 않습니다. | `Transcript`; `maxChars`(42), `maxCueMs`(7000) | `string` |
 | `toText(t, opts)` | 일반 텍스트. 긴 쉼에서 문단을 나눕니다. | `Transcript`; `paragraphGapMs`(2000) | `string` |
@@ -272,7 +272,7 @@ transcript-stitch <demo|stitch|plan> [options]
 | 명령 | 옵션 |
 |---|---|
 | `demo` | `--out-dir <dir>` (기본 `out`). 동봉한 연습 데이터로 단순 이어 붙이기와 stitch 를 비교하고 `out/naive.srt`, `out/stitched.srt` 를 씁니다 |
-| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--report`, `--strict`(경고가 있으면 종료 1) |
+| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--fuzzy`, `--report`, `--strict`(경고가 있으면 종료 1) |
 | `plan <file.wav> --max-size <size>` | `--max-duration`, `--overlap`, `--min-chunk`, `--ffmpeg`, `--json` |
 
 종료 코드: 0 정상, 1 `--strict` 에서 경고, 2 사용법·입력 오류, 3 계획 불가.
@@ -298,12 +298,12 @@ node dist/cli.js --help --lang ko
 ## 언제 쓰나
 
 - 잘 맞는 경우: 긴 오디오를 이미 나눴고(ffmpeg 나 분할 도구) 조각 결과를 깨끗한 타임라인 하나로 합치고 싶을 때, 또는 업로드 제한을 지키는 분할 계획이 필요할 때.
-- 다루지 않는 것: 오디오 자르기, 받아쓰기 API 호출, 띄어쓰기 없는 언어(글자 단위 정렬은 아직 없음), 두 조각이 다르게 들은 단어(시각이 있는 응답의 중점 자르기 폴백으로만 처리, 텍스트 전용은 양쪽 유지).
+- 다루지 않는 것: 오디오 자르기, 받아쓰기 API 호출, 띄어쓰기 없는 언어(글자 단위 정렬은 아직 없음), 두 조각이 다르게 들은 단어(철자·단복수처럼 조금 다른 경우는 선택 옵션 `fuzzy` 를 켜야만 맞추고, 그 외에는 시각이 있는 응답의 중점 자르기 폴백, 텍스트 전용은 양쪽 유지).
 - 다른 도구: 오디오 분할은 [`audio-chunker`](https://www.npmjs.com/package/audio-chunker) 나 [ffmpeg](https://ffmpeg.org/), Groq 의 [음성 인식 문서](https://console.groq.com/docs/speech-to-text) 는 나누기·처리·합치기 방식을 설명합니다.
 
 ## 버전
 
-유의적 버전(SemVer)을 따릅니다. 0.x 동안은 마이너 버전에서 API 가 바뀔 수 있고, 바뀌면 [CHANGELOG.md](CHANGELOG.md) 에 적습니다. 현재 버전: 0.1.1.
+유의적 버전(SemVer)을 따릅니다. 0.x 동안은 마이너 버전에서 API 가 바뀔 수 있고, 바뀌면 [CHANGELOG.md](CHANGELOG.md) 에 적습니다. 현재 버전: 0.2.0.
 
 ## 개발
 
@@ -311,7 +311,7 @@ Node.js 22.12 이상이 필요합니다.
 
 ```bash
 npm install
-npm test            # 먼저 빌드합니다. 테스트 파일 7개, 테스트 300개
+npm test            # 먼저 빌드합니다. 테스트 파일 8개, 테스트 313개
 npm run typecheck
 npm run check:package
 npm run fixtures    # 연습 데이터 다시 만들기(결정적)
@@ -321,7 +321,7 @@ npm run fixtures    # 연습 데이터 다시 만들기(결정적)
 
 | 증상 | 원인 | 해결 |
 |---|---|---|
-| `NO_MATCH` 경고 | 두 조각이 겹친 단어를 다르게 들었거나 겹침이 너무 짧음. | 결과는 나옵니다. 시각이 있는 응답은 중점에서 자르고, 텍스트 전용 응답은 시간으로 자를 수 없어 양쪽을 모두 남기므로 겹친 단어가 중복으로 나올 수 있습니다. 타임스탬프를 요청하거나 겹침을 1.5초 이상으로 늘리세요. |
+| `NO_MATCH` 경고 | 두 조각이 겹친 단어를 다르게 들었거나 겹침이 너무 짧음. | 결과는 나옵니다. 시각이 있는 응답은 중점에서 자르고, 텍스트 전용 응답은 시간으로 자를 수 없어 양쪽을 모두 남기므로 겹친 단어가 중복으로 나올 수 있습니다. 타임스탬프를 요청하거나 겹침을 1.5초 이상으로 늘리세요. 단어가 조금만 다르면 `--fuzzy`(라이브러리는 `fuzzy: true`)를 켜 보세요. |
 | `REPORTED_OVERLAP_DIFFERS` | 분할 도구가 보고한 겹침이 실제와 다름. | 고칠 것 없음. 경계 시각으로 계산한 실제 겹침을 씁니다. |
 | `toSrt` 에서 `NO_TIMESTAMPS` | 응답이 텍스트뿐임. | `toText` 를 쓰거나 API 에 단어·문장 타임스탬프를 요청하세요. |
 | CLI 가 한국어로 나옴 (`node dist/cli.js`, `npx transcript-stitch`) | `LANG` 이 `ko` 로 시작함. | `--lang en` 을 붙이거나 `TRANSCRIPT_STITCH_LANG=en` 을 설정하세요. `npm run demo` 는 항상 영어, `npm run demo:ko` 는 항상 한국어입니다. |

@@ -95,7 +95,7 @@ every boundary
 
 ### Practice (mock) mode
 
-The bundled `fixtures/` are **practice (mock) responses, not recordings of a real API.** They are synthesized from a known sentence, cut into overlapping chunks, and damaged the way real chunk edges are (cut words, capitalized first words, times before the chunk start). That lets the demo compute the exact truth. Real API responses can differ: two chunks may hear the overlapped words differently, in which case `stitch` reports a warning and, for timed responses, falls back to cutting at the middle of the overlap (text-only responses keep both sides). See [fixtures/README.md](fixtures/README.md).
+The bundled `fixtures/` are **practice (mock) responses, not recordings of a real API.** They are synthesized from a known sentence, cut into overlapping chunks, and damaged the way real chunk edges are (cut words, capitalized first words, times before the chunk start). That lets the demo compute the exact truth. Real API responses can differ: two chunks may hear the overlapped words differently, in which case `stitch` reports a warning and, for timed responses, falls back to cutting at the middle of the overlap (text-only responses keep both sides). Turn on the opt-in `fuzzy` option (CLI `--fuzzy`) to also match words that differ slightly. See [fixtures/README.md](fixtures/README.md).
 
 ## Step by step
 
@@ -152,7 +152,7 @@ node dist/cli.js stitch --manifest fixtures/probe28/openai/manifest.json --forma
 1. **One unit: integer milliseconds.** `normalize` rounds second-based responses to integer ms and `stitch` rounds chunk `startMs`, so floating point noise (`188595.00000000003`) cannot create 1 ms gaps or overlaps.
 2. **The overlap is computed, not trusted.** Actual overlap is `endMs` of the left chunk minus `startMs` of the right chunk. What a splitter *reported* is recorded in `report.boundaries[].reportedOverlapMs` and a `REPORTED_OVERLAP_DIFFERS` warning is raised if it disagrees.
 3. **De-duplication = longest common run.** Inside the overlap window the normalized words of both chunks are compared, the longest common run of words is found, and the cut is made in the middle of that run. A cut piece (`upl`) loses against the whole word (`upload`).
-4. **Always a result.** No match in the overlap: for timed (word or segment) responses, cut at the middle of the overlap and add a `NO_MATCH` warning (or keep both with `onNoMatch: 'keep-both'`). Text-only responses have no timestamps and cannot be cut by time, so both sides are kept (method `text`) with a `NO_MATCH` warning, and the overlapped words may appear twice.
+4. **Always a result.** No match in the overlap: for timed (word or segment) responses, cut at the middle of the overlap and add a `NO_MATCH` warning (or keep both with `onNoMatch: 'keep-both'`). Text-only responses have no timestamps and cannot be cut by time, so both sides are kept (method `text`) with a `NO_MATCH` warning, and the overlapped words may appear twice. If the two chunks only spelled some words differently (`seconds` / `second`), the opt-in `fuzzy: true` option (CLI `--fuzzy`) matches them by similarity (Jaro-Winkler, threshold 0.85, or pass a number from above 0 up to 1 as `fuzzy`). It is off by default, words shorter than 3 letters are still compared exactly, and repeated phrases can be aligned wrongly, so check the report.
 
 ```mermaid
 flowchart TD
@@ -174,7 +174,7 @@ All times are integer milliseconds. Errors are `StitchError` with a stable `code
 |---|---|---|---|
 | `normalize(resp, { provider })` | Turns one raw response (OpenAI/Groq `verbose_json`, whisper.cpp `verbose_json`, or text only) into the common format. | `resp`, `provider`: `auto` (default), `openai`, `groq`, `whispercpp`, `text` | `Transcript` |
 | `detectProvider(resp)` | Guesses the response shape. | `resp` | `'openai' \| 'groq' \| 'whispercpp' \| 'text'` |
-| `stitch(chunks, opts)` | Offsets, de-duplicates and joins chunks into one timeline. | `chunks: { startMs, endMs?, result, provider?, overlapMs? }[]`; `opts`: `minMatchWords`, `windowSlackMs`, `maxWordDriftMs`, `onNoMatch` | `Stitched` (`Transcript` + `report`) |
+| `stitch(chunks, opts)` | Offsets, de-duplicates and joins chunks into one timeline. | `chunks: { startMs, endMs?, result, provider?, overlapMs? }[]`; `opts`: `minMatchWords`, `windowSlackMs`, `maxWordDriftMs`, `onNoMatch`, `fuzzy` (`false`, default; `true` = similarity 0.85; or a threshold above 0 up to 1) | `Stitched` (`Transcript` + `report`) |
 | `naiveConcat(chunks)` | What plain pasting gives (for comparison and tests). | same `chunks` | `Stitched` |
 | `toSrt` / `toVtt(t, opts)` | Subtitle text, cues numbered from 1, never overlapping. | `Transcript`; `maxChars` (42), `maxCueMs` (7000) | `string` |
 | `toText(t, opts)` | Plain text, paragraph break at long pauses. | `Transcript`; `paragraphGapMs` (2000) | `string` |
@@ -276,7 +276,7 @@ transcript-stitch <demo|stitch|plan> [options]
 | Command | Options |
 |---|---|
 | `demo` | `--out-dir <dir>` (default `out`); compares naive and stitched on the bundled practice data, writes `out/naive.srt` and `out/stitched.srt` |
-| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--report`, `--strict` (exit 1 on warnings) |
+| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--fuzzy`, `--report`, `--strict` (exit 1 on warnings) |
 | `plan <file.wav> --max-size <size>` | `--max-duration`, `--overlap`, `--min-chunk`, `--ffmpeg`, `--json` |
 
 Exit codes: 0 ok, 1 warnings with `--strict`, 2 usage or input error, 3 no plan possible.
@@ -302,12 +302,12 @@ The library works on whatever responses you feed it: call your provider yourself
 ## When to use it
 
 - A good fit: you already split long audio (with ffmpeg or a splitter) and need the pieces merged into one clean timeline; or you want a chunk plan that respects an upload limit.
-- Not covered: cutting audio, calling transcription APIs, languages written without spaces (character-level alignment is not built yet), and words that two chunks heard differently (handled only by the midpoint fallback for timed responses; text-only responses keep both sides).
+- Not covered: cutting audio, calling transcription APIs, languages written without spaces (character-level alignment is not built yet), and words that two chunks heard differently (slight spelling or plural differences are matched only with the opt-in `fuzzy` option; otherwise the midpoint fallback applies to timed responses and text-only responses keep both sides).
 - Other tools: for splitting audio see [`audio-chunker`](https://www.npmjs.com/package/audio-chunker) or [ffmpeg](https://ffmpeg.org/); Groq's [speech-to-text docs](https://console.groq.com/docs/speech-to-text) describe the split-process-merge approach.
 
 ## Versions
 
-Semantic Versioning. While the version is 0.x the API may change in a minor release; changes are listed in [CHANGELOG.md](CHANGELOG.md). Current version: 0.1.1.
+Semantic Versioning. While the version is 0.x the API may change in a minor release; changes are listed in [CHANGELOG.md](CHANGELOG.md). Current version: 0.2.0.
 
 ## Development
 
@@ -315,7 +315,7 @@ Needs Node.js 22.12 or newer.
 
 ```bash
 npm install
-npm test            # builds first; 7 test files, 300 tests
+npm test            # builds first; 8 test files, 313 tests
 npm run typecheck
 npm run check:package
 npm run fixtures    # regenerate the practice data (deterministic)
@@ -325,7 +325,7 @@ npm run fixtures    # regenerate the practice data (deterministic)
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `NO_MATCH` warning | The two chunks did not hear the overlapped words the same way, or the overlap is too short. | The result is still produced. Timed responses are cut at the midpoint; text-only responses cannot be cut by time, so both sides are kept and the overlapped words may appear twice. Request timestamps or use a longer overlap, 1.5 s or more. |
+| `NO_MATCH` warning | The two chunks did not hear the overlapped words the same way, or the overlap is too short. | The result is still produced. Timed responses are cut at the midpoint; text-only responses cannot be cut by time, so both sides are kept and the overlapped words may appear twice. Request timestamps or use a longer overlap, 1.5 s or more. If the words differ only slightly, try `--fuzzy` (library: `fuzzy: true`). |
 | `REPORTED_OVERLAP_DIFFERS` | The splitter's reported overlap is not the real one. | Nothing to fix: the real overlap from the boundary times is used. |
 | `NO_TIMESTAMPS` from `toSrt` | The responses were text only. | Use `toText`, or request word or segment timestamps from the API. |
 | CLI prints Korean (`node dist/cli.js` or `npx transcript-stitch`) | Your `LANG` starts with `ko`. | Add `--lang en` or set `TRANSCRIPT_STITCH_LANG=en`. `npm run demo` is always English and `npm run demo:ko` is always Korean. |

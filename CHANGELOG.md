@@ -5,6 +5,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-14
+
+### Added
+- `fuzzy` option for `stitch` (`false` by default; `true` = Jaro-Winkler similarity 0.85, or a threshold above 0 up to 1) to also match overlapped words that differ slightly, in timed and text-only mode. Words under 3 letters are always compared exactly; equal-length runs prefer more exactly equal words. Out-of-range values throw `StitchError('BAD_INPUT')`.
+- `stitch --fuzzy` CLI flag, with English and Korean `--help` text.
+
 ## [0.1.1] - 2026-11-14
 
 ### Changed
