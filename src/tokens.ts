@@ -59,3 +59,53 @@ export function groupTokens(tokens: RawToken[]): RawWord[] {
   }
   return words;
 }
+
+/** Default Jaro-Winkler threshold used by `fuzzy: true`. */
+export const DEFAULT_FUZZY_THRESHOLD = 0.85;
+/** Keys shorter than this are only ever compared exactly (avoids aligning short words by accident). */
+export const FUZZY_MIN_KEY_LENGTH = 3;
+
+/** Jaro-Winkler similarity of two keys, from 0 (different) to 1 (equal). Pure and deterministic. */
+export function jaroWinkler(a: string, b: string): number {
+  if (a === b) return 1;
+  const x = Array.from(a);
+  const y = Array.from(b);
+  if (x.length === 0 || y.length === 0) return 0;
+  const range = Math.max(0, Math.floor(Math.max(x.length, y.length) / 2) - 1);
+  const xm = new Array<boolean>(x.length).fill(false);
+  const ym = new Array<boolean>(y.length).fill(false);
+  let matches = 0;
+  for (let i = 0; i < x.length; i++) {
+    const from = Math.max(0, i - range);
+    const to = Math.min(y.length - 1, i + range);
+    for (let j = from; j <= to; j++) {
+      if (ym[j] || x[i] !== y[j]) continue;
+      xm[i] = true;
+      ym[j] = true;
+      matches++;
+      break;
+    }
+  }
+  if (matches === 0) return 0;
+  let transpositions = 0;
+  let k = 0;
+  for (let i = 0; i < x.length; i++) {
+    if (!xm[i]) continue;
+    while (!ym[k]) k++;
+    if (x[i] !== y[k]) transpositions++;
+    k++;
+  }
+  const jaro = (matches / x.length + matches / y.length + (matches - transpositions / 2) / matches) / 3;
+  let prefix = 0;
+  while (prefix < 4 && prefix < x.length && prefix < y.length && x[prefix] === y[prefix]) prefix++;
+  return jaro + prefix * 0.1 * (1 - jaro);
+}
+
+/**
+ * True when two keys are close enough to count as the same word under a
+ * threshold. Keys shorter than 3 characters never match approximately.
+ */
+export function fuzzyKeyMatch(a: string, b: string, threshold: number): boolean {
+  if (Array.from(a).length < FUZZY_MIN_KEY_LENGTH || Array.from(b).length < FUZZY_MIN_KEY_LENGTH) return false;
+  return jaroWinkler(a, b) >= threshold;
+}

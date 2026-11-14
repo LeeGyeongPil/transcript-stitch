@@ -44,6 +44,7 @@ export const ko: Record<MessageKey, string> = {
     '  --provider <이름>    auto (기본값), openai, groq, whispercpp, text',
     '  --format <이름>      srt (기본값), vtt, txt, json',
     '  -o, --output <파일>  표준 출력 대신 파일에 씁니다',
+    '  --fuzzy              겹친 단어가 조금 달라도(철자·단복수) 맞춥니다. 기본값은 끔',
     '  --report             경계 보고서를 표준 오류로 출력합니다',
     '  --strict             경고가 있으면 종료 코드 1 로 끝냅니다 (결과는 그대로 씁니다)',
     '',

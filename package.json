@@ -1,6 +1,6 @@
 {
   "name": "transcript-stitch",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Plan size-safe audio chunks for speech-to-text APIs and stitch the per-chunk transcripts back into one timeline (offset fix, overlap de-duplication, SRT/VTT). Zero runtime dependencies.",
   "keywords": ["whisper", "transcription", "speech-to-text", "stt", "srt", "vtt", "chunking", "openai", "groq", "whisper.cpp", "subtitles"],
   "license": "MIT",

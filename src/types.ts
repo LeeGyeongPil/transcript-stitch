@@ -50,6 +50,15 @@ export interface StitchOptions {
   maxWordDriftMs?: number;
   /** What to do when the overlap has no matching words (default `midpoint`). */
   onNoMatch?: 'midpoint' | 'keep-both';
+  /**
+   * Also match overlapped words that differ slightly (spelling, plural).
+   * `false` or unset: exact match only (default). `true`: Jaro-Winkler
+   * similarity of at least 0.85. A number: that similarity threshold, greater
+   * than 0 and at most 1. Words with fewer than 3 letters or digits are
+   * always compared exactly. Repeated phrases can be aligned wrongly, so it
+   * is off by default.
+   */
+  fuzzy?: boolean | number;
 }
 
 export type WarningCode =

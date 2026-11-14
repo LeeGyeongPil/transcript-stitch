@@ -2,7 +2,7 @@ import { longestCommonRun, type Run } from './align.js';
 import { StitchError } from './errors.js';
 import { normalize } from './normalize.js';
 import { roundMs } from './time.js';
-import { isFragmentOf, keyOf, tokenize } from './tokens.js';
+import { DEFAULT_FUZZY_THRESHOLD, fuzzyKeyMatch, isFragmentOf, keyOf, tokenize } from './tokens.js';
 import type {
   BoundaryReport,
   ChunkInput,
@@ -14,7 +14,10 @@ import type {
   Word,
 } from './types.js';
 
-type Required_ = Required<StitchOptions>;
+type Required_ = Required<Omit<StitchOptions, 'fuzzy'>> & {
+  /** Similarity threshold, or undefined for exact matching only. */
+  fuzzy: number | undefined;
+};
 
 interface Prepared {
   index: number;
@@ -34,12 +37,22 @@ const SENTENCE_END = /[.!?…。！？]["')\]]*$/u;
 const SEGMENT_PAUSE_MS = 1000;
 const DEFAULT_TEXT_WINDOW = 40;
 
+function resolveFuzzy(fuzzy: StitchOptions['fuzzy']): number | undefined {
+  if (fuzzy === undefined || fuzzy === false) return undefined;
+  if (fuzzy === true) return DEFAULT_FUZZY_THRESHOLD;
+  if (typeof fuzzy !== 'number' || !Number.isFinite(fuzzy) || fuzzy <= 0 || fuzzy > 1) {
+    throw new StitchError('BAD_INPUT', 'fuzzy must be a boolean or a similarity threshold greater than 0 and at most 1');
+  }
+  return fuzzy;
+}
+
 function resolveOptions(opts: StitchOptions): Required_ {
   const merged: Required_ = {
     minMatchWords: opts.minMatchWords ?? 2,
     windowSlackMs: opts.windowSlackMs ?? 500,
     maxWordDriftMs: opts.maxWordDriftMs ?? 300,
     onNoMatch: opts.onNoMatch ?? 'midpoint',
+    fuzzy: resolveFuzzy(opts.fuzzy),
   };
   if (!Number.isInteger(merged.minMatchWords) || merged.minMatchWords < 1) {
     throw new StitchError('BAD_INPUT', 'minMatchWords must be an integer >= 1');
@@ -181,6 +194,7 @@ function stitchTimed(prepared: Prepared[], o: Required_): { words: Word[]; bound
       const ka = keyOf(a.text);
       const kc = keyOf(c.text);
       if (ka === kc) return Math.abs(a.startMs - c.startMs) <= o.maxWordDriftMs;
+      if (o.fuzzy !== undefined && fuzzyKeyMatch(ka, kc, o.fuzzy)) return Math.abs(a.startMs - c.startMs) <= o.maxWordDriftMs;
       // A word cut off by the end of the left chunk: the piece is a prefix of the whole word.
       if (i === tailIdx.length - 1 && isFragmentOf(ka, kc) && kc.startsWith(ka)) return Math.abs(a.startMs - c.startMs) <= o.maxWordDriftMs;
       // A word cut off by the start of the right chunk: the piece is a suffix.
@@ -192,7 +206,13 @@ function stitchTimed(prepared: Prepared[], o: Required_): { words: Word[]; bound
       const last = out[tailIdx[run.i + run.len - 1]!]!;
       return Math.abs((first.startMs + last.endMs) / 2 - overlapMid);
     };
-    const run = longestCommonRun(tailIdx.length, headIdx.length, eq, cost);
+    // With fuzzy matching, equal-length runs prefer the one with more exactly equal words.
+    const exact = (r: Run): number => {
+      let n = 0;
+      for (let k = 0; k < r.len; k++) if (keyOf(out[tailIdx[r.i + k]!]!.text) === keyOf(words[headIdx[r.j + k]!]!.text)) n++;
+      return n;
+    };
+    const run = longestCommonRun(tailIdx.length, headIdx.length, eq, cost, o.fuzzy === undefined ? undefined : exact);
 
     if (run && run.len >= o.minMatchWords) {
       const r = spliceRun(out, words, tailIdx, headIdx, run);
@@ -291,10 +311,16 @@ function stitchText(prepared: Prepared[], o: Required_): { tokens: TextToken[]; 
       const ka = keyOf(out[tailIdx[i]!]!.text);
       const kc = keyOf(tokens[headIdx[j]!]!.text);
       if (ka === kc) return true;
+      if (o.fuzzy !== undefined && fuzzyKeyMatch(ka, kc, o.fuzzy)) return true;
       if (i === tailIdx.length - 1 && isFragmentOf(ka, kc) && kc.startsWith(ka)) return true;
       return j === 0 && isFragmentOf(kc, ka) && ka.endsWith(kc);
     };
-    const run = longestCommonRun(tailIdx.length, headIdx.length, eq);
+    const exact = (r: Run): number => {
+      let n = 0;
+      for (let k = 0; k < r.len; k++) if (keyOf(out[tailIdx[r.i + k]!]!.text) === keyOf(tokens[headIdx[r.j + k]!]!.text)) n++;
+      return n;
+    };
+    const run = longestCommonRun(tailIdx.length, headIdx.length, eq, undefined, o.fuzzy === undefined ? undefined : exact);
     if (run && run.len >= o.minMatchWords) {
       const r = spliceRun(out, tokens, tailIdx, headIdx, run);
       out = r.merged;

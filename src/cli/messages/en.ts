@@ -42,6 +42,7 @@ export const en = {
     '  --provider <name>   auto (default), openai, groq, whispercpp or text',
     '  --format <name>     srt (default), vtt, txt or json',
     '  -o, --output <file> Write the result to a file instead of stdout',
+    '  --fuzzy             Also match overlapped words that differ slightly (spelling, plural); off by default',
     '  --report            Print the boundary report (to stderr)',
     '  --strict            Exit with 1 when there are warnings (the result is still written)',
     '',

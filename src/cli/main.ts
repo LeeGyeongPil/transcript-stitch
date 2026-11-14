@@ -20,7 +20,7 @@ import type { MessageKey } from './messages/en.js';
 import { reportText, warningLine } from './report.js';
 import { renderTable } from './table.js';
 
-export const VERSION = '0.1.1';
+export const VERSION = '0.2.0';
 
 export interface CliContext {
   env: Env;
@@ -37,7 +37,7 @@ const SPECS: Record<Command, ArgSpec> = {
   demo: { values: ['lang', 'out-dir'], flags: GLOBAL_FLAGS, short: { h: 'help' } },
   stitch: {
     values: ['lang', 'manifest', 'provider', 'format', 'output'],
-    flags: [...GLOBAL_FLAGS, 'report', 'strict'],
+    flags: [...GLOBAL_FLAGS, 'report', 'strict', 'fuzzy'],
     short: { o: 'output', h: 'help' },
   },
   plan: {
@@ -131,6 +131,7 @@ function runStitch(argv: string[], ctx: CliContext, lang: Lang): number {
   const chunks = readManifest(resolve(ctx.cwd, manifestPath));
   const result = stitch(
     chunks.map((c) => (provider === 'auto' ? c : { ...c, provider })),
+    p.flags.has('fuzzy') ? { fuzzy: true } : {},
   );
 
   let body: string;

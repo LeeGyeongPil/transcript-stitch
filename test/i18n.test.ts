@@ -63,7 +63,7 @@ describe('AC-9: language choice order', () => {
     const allowed = new Set([
       'transcript-stitch', 'demo', 'stitch', 'plan', 'manifest', 'ffmpeg', 'mock', 'input', 'output', 'mp3', 'wav', 'pcm_s16le',
       'verbose_json', 'openai', 'groq', 'whispercpp', 'whisper', 'cpp', 'auto', 'text', 'txt', 'json', 'srt', 'vtt', 'file', 'startms', 'endms',
-      'chunk', 'chunks', 'en', 'ko', 'lang', 'help', 'version', 'out', 'dir', 'ms', 'api', 'lc', 'all', 'messages', 'transcript', 'stitch_lang', 'strict',
+      'chunk', 'chunks', 'en', 'ko', 'lang', 'help', 'version', 'out', 'dir', 'ms', 'api', 'lc', 'all', 'messages', 'transcript', 'stitch_lang', 'strict', 'fuzzy',
       'verbose', 'pcm', 's16le', 'max', 'size', 'duration', 'overlap', 'min', 'report', 'format', 'provider', 'naive', 'stitched', 'mb', 'mib', 'bat', 'tmp', 'foo',
     ]);
     const bad: string[] = [];
@@ -149,6 +149,9 @@ describe('AC-9: screens follow the language', () => {
   it('prints the version', () => {
     const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string };
     expect(VERSION).toBe(pkg.version);
+    const lock = JSON.parse(readFileSync(new URL('../package-lock.json', import.meta.url), 'utf8')) as { version: string; packages: Record<string, { version: string }> };
+    expect(lock.version).toBe(pkg.version);
+    expect(lock.packages['']?.version).toBe(pkg.version);
     expect(runCli(['--version']).out.trim()).toBe(VERSION);
     expect(runCli(['-v']).out.trim()).toBe(VERSION);
   });
