@@ -12,7 +12,7 @@ function isObj(value: unknown): value is Obj {
 function unknownFormat(detail: string): StitchError {
   return new StitchError(
     'UNKNOWN_FORMAT',
-    `unknown transcription response: ${detail}. Expected an OpenAI/Groq verbose_json, a whisper.cpp verbose_json, or text ({ text } or a string).`,
+    `unknown transcription response: ${detail}. Expected an OpenAI/Groq verbose_json, a whisper.cpp verbose_json, or text ({ text } or a string); for SRT/VTT pass provider "srt" or "vtt".`,
   );
 }
 
@@ -66,6 +66,80 @@ function textOnly(text: string): Transcript {
   return { text: text.trim(), segments: [], hasTimestamps: false };
 }
 
+const CUE_TIME = /^(?:(\d+):)?(\d{1,2}):(\d{2})[.,](\d{1,3})$/;
+const CUE_EXAMPLE = '00:00:01,000 --> 00:00:02,000';
+
+/** A cue-file parse error. `details.line` is the 1-based line, which lets the CLI show where the file is wrong. */
+function cueError(line: number, detail: string): StitchError {
+  return new StitchError(
+    'UNKNOWN_FORMAT',
+    `invalid SRT/VTT cue file at line ${line}: ${detail}. Cue time lines look like "${CUE_EXAMPLE}" (VTT also allows "00:01.000 --> 00:02.000").`,
+    { line, detail },
+  );
+}
+
+function cueTimeToMs(raw: string, label: string, line: number): number {
+  const m = CUE_TIME.exec(raw.trim());
+  if (!m || Number(m[2]) > 59 || Number(m[3]) > 59) throw cueError(line, `${label} is not a valid cue time: "${raw.trim()}"`);
+  return (Number(m[1] ?? 0) * 3600 + Number(m[2]) * 60 + Number(m[3])) * 1000 + Number((m[4] as string).padEnd(3, '0'));
+}
+
+const ENTITIES: Record<string, string> = { amp: '&', lt: '<', gt: '>', nbsp: ' ', lrm: '', rlm: '' };
+
+/** Decode the WebVTT character references that the spec defines. Unknown references stay as they are. */
+function decodeEntities(text: string): string {
+  return text.replace(/&(amp|lt|gt|nbsp|lrm|rlm);/g, (_m, name: string) => ENTITIES[name] as string);
+}
+
+/** Parse SRT or WebVTT text into segments with interpolated (estimated) words. */
+function parseCues(input: string, kind: 'srt' | 'vtt'): Transcript {
+  const lines = input.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').split('\n');
+  const segments: Segment[] = [];
+  const words: Word[] = [];
+  const isBlank = (n: number): boolean => (lines[n] ?? '').trim() === '';
+  let i = 0;
+  while (i < lines.length) {
+    const line = (lines[i] ?? '').trim();
+    if (line === '') {
+      i++;
+      continue;
+    }
+    if (!line.includes('-->')) {
+      if (/^WEBVTT(\s|$)/.test(line) || /^(NOTE|STYLE|REGION)(\s|$)/.test(line)) {
+        // Skip the whole block: the WEBVTT header may carry metadata lines such as "Kind: captions".
+        while (i < lines.length && !isBlank(i)) i++;
+      } else if ((lines[i + 1] ?? '').includes('-->')) {
+        i++; // cue number or identifier
+      } else {
+        throw cueError(i + 1, `unexpected line "${line.slice(0, 40)}" outside a cue`);
+      }
+      continue;
+    }
+    const startLine = i + 1;
+    const [left = '', right = ''] = line.split('-->');
+    const startMs = cueTimeToMs(left, 'cue start', startLine);
+    const endMs = cueTimeToMs(right.trim().split(/\s+/)[0] ?? '', 'cue end', startLine);
+    i++;
+    const body: string[] = [];
+    while (i < lines.length && !isBlank(i)) {
+      const next = (lines[i] as string).trim();
+      // A missing blank line: the next cue (time line, or number line followed by one) starts here.
+      if (next.includes('-->') || (/^\d+$/.test(next) && (lines[i + 1] ?? '').includes('-->'))) break;
+      body.push(next);
+      i++;
+    }
+    let text = body.join(' ').replace(/<[^>]*>/g, '');
+    if (kind === 'vtt') text = decodeEntities(text);
+    text = text.replace(/\s+/g, ' ').trim();
+    if (text === '') continue;
+    const [s, e] = clampRange(startMs, endMs);
+    const segWords = interpolate(text, s, e);
+    words.push(...segWords);
+    segments.push({ text, startMs: s, endMs: e, chunk: 0, words: segWords });
+  }
+  return { text: segments.map((x) => x.text).join(' '), segments, words, hasTimestamps: true };
+}
+
 /** Detect which response shape `resp` has. Throws `UNKNOWN_FORMAT` when none fits. */
 export function detectProvider(resp: unknown): Exclude<Provider, 'auto'> {
   if (typeof resp === 'string') return 'text';
@@ -86,8 +160,12 @@ export function detectProvider(resp: unknown): Exclude<Provider, 'auto'> {
  */
 export function normalize(resp: unknown, opts: { provider?: Provider } = {}): Transcript {
   const requested = opts.provider ?? 'auto';
-  if (!['auto', 'openai', 'groq', 'whispercpp', 'text'].includes(requested)) {
-    throw new StitchError('BAD_INPUT', `unknown provider "${String(requested)}"; use auto, openai, groq, whispercpp or text`);
+  if (!['auto', 'openai', 'groq', 'whispercpp', 'text', 'srt', 'vtt'].includes(requested)) {
+    throw new StitchError('BAD_INPUT', `unknown provider "${String(requested)}"; use auto, openai, groq, whispercpp, text, srt or vtt`);
+  }
+  if (requested === 'srt' || requested === 'vtt') {
+    if (typeof resp !== 'string') throw unknownFormat(`provider "${requested}" needs the cue file as a string`);
+    return parseCues(resp, requested);
   }
   if (typeof resp === 'string') return textOnly(resp);
   const kind = requested === 'auto' ? detectProvider(resp) : requested;

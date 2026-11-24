@@ -3,6 +3,7 @@ import { basename, dirname, join, resolve } from 'node:path';
 import {
   StitchError,
   detectSilences,
+  normalize,
   parseDuration,
   parseSize,
   planChunks,
@@ -20,7 +21,7 @@ import type { MessageKey } from './messages/en.js';
 import { reportText, warningLine } from './report.js';
 import { renderTable } from './table.js';
 
-export const VERSION = '0.2.0';
+export const VERSION = '0.3.0';
 
 export interface CliContext {
   env: Env;
@@ -48,7 +49,7 @@ const SPECS: Record<Command, ArgSpec> = {
 };
 const TOP_SPEC: ArgSpec = { values: ['lang'], flags: GLOBAL_FLAGS, short: { h: 'help', v: 'version' } };
 
-const PROVIDERS: Provider[] = ['auto', 'openai', 'groq', 'whispercpp', 'text'];
+const PROVIDERS: Provider[] = ['auto', 'openai', 'groq', 'whispercpp', 'text', 'srt', 'vtt'];
 const FORMATS = ['srt', 'vtt', 'txt', 'json'] as const;
 
 /** Find `--lang` before the command is known, so errors are shown in the right language. */
@@ -84,6 +85,16 @@ function readJsonFile(path: string): unknown {
   }
 }
 
+/** Read a chunk file as JSON. A parse failure on a non-.json extension gets the supported-format hint. */
+function readChunkJson(path: string, isJson: boolean): unknown {
+  try {
+    return readJsonFile(path);
+  } catch (e) {
+    if (!isJson && e instanceof CliError && e.code === 'BAD_JSON') throw new CliError('UNSUPPORTED_FILE', { path });
+    throw e;
+  }
+}
+
 function writeFile(path: string, data: string): void {
   try {
     writeFileSync(path, data);
@@ -98,6 +109,18 @@ function pick<T extends string>(value: string | undefined, allowed: readonly T[]
   return value as T;
 }
 
+/** Parse a cue file once up front so a bad cue is reported with the file path and line. */
+function checkCueFile(path: string, text: string, kind: 'srt' | 'vtt'): void {
+  try {
+    normalize(text, { provider: kind });
+  } catch (e) {
+    if (e instanceof StitchError && typeof e.details.line === 'number') {
+      throw new CliError('BAD_CUE', { path, line: e.details.line, detail: String(e.details.detail ?? '') });
+    }
+    throw e;
+  }
+}
+
 function readManifest(path: string): ChunkInput[] {
   const raw = readJsonFile(path);
   const list = Array.isArray(raw) ? raw : (raw as { chunks?: unknown } | null)?.chunks;
@@ -109,8 +132,12 @@ function readManifest(path: string): ChunkInput[] {
       throw new CliError('BAD_MANIFEST', { index });
     }
     const file = resolve(base, e.file);
-    const result = file.toLowerCase().endsWith('.txt') ? readFile(file).toString('utf8') : readJsonFile(file);
+    const lower = file.toLowerCase();
+    const cue = lower.endsWith('.srt') ? 'srt' : lower.endsWith('.vtt') ? 'vtt' : undefined;
+    const result = cue || lower.endsWith('.txt') ? readFile(file).toString('utf8') : readChunkJson(file, lower.endsWith('.json'));
+    if (cue) checkCueFile(file, result as string, cue);
     const input: ChunkInput = { startMs: e.startMs, result };
+    if (cue) input.provider = cue;
     if (typeof e.endMs === 'number') input.endMs = e.endMs;
     if (typeof e.overlapMs === 'number') input.overlapMs = e.overlapMs;
     return input;

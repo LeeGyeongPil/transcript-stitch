@@ -1,5 +1,5 @@
-/** Which response shape a chunk result has. `auto` detects it. */
-export type Provider = 'auto' | 'openai' | 'groq' | 'whispercpp' | 'text';
+/** Which response shape a chunk result has. `auto` detects it (never SRT/VTT strings: pass `srt` or `vtt` explicitly). */
+export type Provider = 'auto' | 'openai' | 'groq' | 'whispercpp' | 'text' | 'srt' | 'vtt';
 
 /** One word. All times are integer milliseconds. */
 export interface Word {
