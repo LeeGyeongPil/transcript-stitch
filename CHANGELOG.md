@@ -3,7 +3,13 @@
 All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.3.0] - 2026-11-24
+
+### Added
+- `normalize` providers `srt` and `vtt`: parse SRT/WebVTT strings (BOM, CRLF, WEBVTT header, NOTE/STYLE blocks, cue settings, short `mm:ss.mmm` times, simple tag removal) into segments with estimated word times. Bad cue times throw `UNKNOWN_FORMAT`. `auto` detection is unchanged.
+- CLI: `.srt` and `.vtt` chunk files in a manifest, `--provider srt|vtt`, and an `UNSUPPORTED_FILE` error (en/ko) that lists the supported formats instead of `BAD_JSON` for unknown extensions.
+- CLI: a `BAD_CUE` error (en/ko) that names the `.srt`/`.vtt` file, the line and the expected time format. The library error carries `details.line`.
+- SRT/VTT parsing: WEBVTT header metadata lines (`Kind:`, `Language:`) are skipped, SRT cues without a blank line between them are split, VTT character references (`&amp;`, `&lt;`, `&gt;`, `&nbsp;`) are decoded.
 
 ## [0.2.0] - 2026-11-14
 

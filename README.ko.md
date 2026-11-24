@@ -168,7 +168,7 @@ flowchart TD
 
 | 이름 | 하는 일 | 주요 인자 | 반환 |
 |---|---|---|---|
-| `normalize(resp, { provider })` | 응답 하나(OpenAI·Groq `verbose_json`, whisper.cpp `verbose_json`, 텍스트만)를 공통 형식으로 바꿉니다. | `resp`, `provider`: `auto`(기본), `openai`, `groq`, `whispercpp`, `text` | `Transcript` |
+| `normalize(resp, { provider })` | 응답 하나(OpenAI·Groq `verbose_json`, whisper.cpp `verbose_json`, `provider: "srt"`/`"vtt"` 의 SRT/VTT 문자열, 텍스트만)를 공통 형식으로 바꿉니다. | `resp`, `provider`: `auto`(기본), `openai`, `groq`, `whispercpp`, `text`, `srt`, `vtt` | `Transcript` |
 | `detectProvider(resp)` | 응답 형식을 추정합니다. | `resp` | `'openai' \| 'groq' \| 'whispercpp' \| 'text'` |
 | `stitch(chunks, opts)` | 시작 시각을 보정하고 중복을 없애 하나의 타임라인으로 합칩니다. | `chunks: { startMs, endMs?, result, provider?, overlapMs? }[]`; `opts`: `minMatchWords`, `windowSlackMs`, `maxWordDriftMs`, `onNoMatch`, `fuzzy`(`false` 기본값, `true` 는 유사도 0.85, 또는 0 초과 1 이하의 문턱값) | `Stitched` (`Transcript` + `report`) |
 | `naiveConcat(chunks)` | 그냥 붙였을 때의 결과(비교·테스트용). | 같은 `chunks` | `Stitched` |
@@ -191,7 +191,7 @@ flowchart TD
 | `PLAN_IMPOSSIBLE` | 제한을 지킬 수 없음(예: 크기 제한이 겹침보다 작음). |
 | `BAD_WAV` | 16비트 PCM WAV 가 아님. |
 
-이 표는 라이브러리의 `StitchError` 코드만 담았습니다. CLI 는 매니페스트나 오디오 파일 경로가 없으면 `FILE_NOT_FOUND`(종료 코드 2)도 보고합니다.
+이 표는 라이브러리의 `StitchError` 코드만 담았습니다. CLI 는 매니페스트나 오디오 파일 경로가 없으면 `FILE_NOT_FOUND`(종료 코드 2)를, 조각 파일이 JSON 이 아니고 지원하지 않는 확장자면 `UNSUPPORTED_FILE`(종료 코드 2)를, `.srt`/`.vtt` 파일에 잘못된 큐가 있으면 파일 경로·줄 번호·기대하는 시각 형식을 알려 주는 `BAD_CUE`(종료 코드 2)도 보고합니다. 코드에서는 같은 문제가 `details.line` 에 줄 번호가 든 `UNKNOWN_FORMAT` `StitchError` 입니다.
 
 ## 사용 예
 
@@ -272,12 +272,14 @@ transcript-stitch <demo|stitch|plan> [options]
 | 명령 | 옵션 |
 |---|---|
 | `demo` | `--out-dir <dir>` (기본 `out`). 동봉한 연습 데이터로 단순 이어 붙이기와 stitch 를 비교하고 `out/naive.srt`, `out/stitched.srt` 를 씁니다 |
-| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--fuzzy`, `--report`, `--strict`(경고가 있으면 종료 1) |
+| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text\|srt\|vtt`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--fuzzy`, `--report`, `--strict`(경고가 있으면 종료 1) |
 | `plan <file.wav> --max-size <size>` | `--max-duration`, `--overlap`, `--min-chunk`, `--ffmpeg`, `--json` |
 
 종료 코드: 0 정상, 1 `--strict` 에서 경고, 2 사용법·입력 오류, 3 계획 불가.
 
 manifest 는 JSON 입니다: `{ "chunks": [{ "file": "chunk-0.json", "startMs": 0, "endMs": 2600 }, ...] }`. 파일 이름은 manifest 기준 상대 경로이고, `.txt` 조각 파일은 일반 텍스트로 읽습니다.
+
+**SRT/VTT 조각 파일.** manifest 의 `.srt`, `.vtt` 조각 파일은 해당 형식으로 읽고(`--provider` 를 직접 주면 그 값이 우선), 코드에서는 `normalize(text, { provider: "srt" })` 또는 `"vtt"` 로 같은 일을 합니다. `auto` 는 문자열을 SRT/VTT 로 보지 않으므로 기존 텍스트 입력은 그대로입니다. 큐는 세그먼트가 되고(`WEBVTT` 헤더 블록의 `Kind: captions` 같은 줄은 건너뛰고, 빈 줄 없이 이어진 SRT 큐는 나누며, VTT 의 `&amp;`·`&lt;`·`&gt;`·`&nbsp;` 는 풀어 줍니다. 큐가 없는 빈 파일은 경고 없이 빈 결과가 됩니다), 단어 시간은 큐 구간에 단어를 고르게 펼친 추정값이라, 겹침 중복 제거 정밀도가 `verbose_json` 의 단어 시간보다 낮습니다. JSON 이 아닌 알 수 없는 확장자는 지원 형식(`.json`, `.txt`, `.srt`, `.vtt`)을 알려 주는 `UNSUPPORTED_FILE` 오류가 납니다.
 
 ### 화면 언어
 
@@ -303,7 +305,7 @@ node dist/cli.js --help --lang ko
 
 ## 버전
 
-유의적 버전(SemVer)을 따릅니다. 0.x 동안은 마이너 버전에서 API 가 바뀔 수 있고, 바뀌면 [CHANGELOG.md](CHANGELOG.md) 에 적습니다. 현재 버전: 0.2.0.
+유의적 버전(SemVer)을 따릅니다. 0.x 동안은 마이너 버전에서 API 가 바뀔 수 있고, 바뀌면 [CHANGELOG.md](CHANGELOG.md) 에 적습니다. 현재 버전: 0.3.0.
 
 ## 개발
 
@@ -311,7 +313,7 @@ Node.js 22.12 이상이 필요합니다.
 
 ```bash
 npm install
-npm test            # 먼저 빌드합니다. 테스트 파일 8개, 테스트 313개
+npm test            # 먼저 빌드합니다. 테스트 파일 9개, 테스트 328개
 npm run typecheck
 npm run check:package
 npm run fixtures    # 연습 데이터 다시 만들기(결정적)

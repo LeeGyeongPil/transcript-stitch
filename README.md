@@ -172,7 +172,7 @@ All times are integer milliseconds. Errors are `StitchError` with a stable `code
 
 | Name | What it does | Main arguments | Returns |
 |---|---|---|---|
-| `normalize(resp, { provider })` | Turns one raw response (OpenAI/Groq `verbose_json`, whisper.cpp `verbose_json`, or text only) into the common format. | `resp`, `provider`: `auto` (default), `openai`, `groq`, `whispercpp`, `text` | `Transcript` |
+| `normalize(resp, { provider })` | Turns one raw response (OpenAI/Groq `verbose_json`, whisper.cpp `verbose_json`, an SRT/VTT string with `provider: "srt"` or `"vtt"`, or text only) into the common format. | `resp`, `provider`: `auto` (default), `openai`, `groq`, `whispercpp`, `text`, `srt`, `vtt` | `Transcript` |
 | `detectProvider(resp)` | Guesses the response shape. | `resp` | `'openai' \| 'groq' \| 'whispercpp' \| 'text'` |
 | `stitch(chunks, opts)` | Offsets, de-duplicates and joins chunks into one timeline. | `chunks: { startMs, endMs?, result, provider?, overlapMs? }[]`; `opts`: `minMatchWords`, `windowSlackMs`, `maxWordDriftMs`, `onNoMatch`, `fuzzy` (`false`, default; `true` = similarity 0.85; or a threshold above 0 up to 1) | `Stitched` (`Transcript` + `report`) |
 | `naiveConcat(chunks)` | What plain pasting gives (for comparison and tests). | same `chunks` | `Stitched` |
@@ -195,7 +195,7 @@ All times are integer milliseconds. Errors are `StitchError` with a stable `code
 | `PLAN_IMPOSSIBLE` | The limits cannot be met (for example the size limit is smaller than the overlap). |
 | `BAD_WAV` | Not a 16-bit PCM WAV. |
 
-The table lists the library's `StitchError` codes. The CLI also reports `FILE_NOT_FOUND` (exit 2) when a manifest or audio file path does not exist.
+The table lists the library's `StitchError` codes. The CLI also reports `FILE_NOT_FOUND` (exit 2) when a manifest or audio file path does not exist, `UNSUPPORTED_FILE` (exit 2) when a chunk file is not valid JSON and has an unsupported extension, and `BAD_CUE` (exit 2) when a `.srt`/`.vtt` file has a bad cue; it names the file, the line number and the expected time format. In code the same problem is an `UNKNOWN_FORMAT` `StitchError` whose `details.line` holds the line.
 
 ## Usage examples
 
@@ -276,12 +276,14 @@ transcript-stitch <demo|stitch|plan> [options]
 | Command | Options |
 |---|---|
 | `demo` | `--out-dir <dir>` (default `out`); compares naive and stitched on the bundled practice data, writes `out/naive.srt` and `out/stitched.srt` |
-| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--fuzzy`, `--report`, `--strict` (exit 1 on warnings) |
+| `stitch --manifest <file>` | `--provider auto\|openai\|groq\|whispercpp\|text\|srt\|vtt`, `--format srt\|vtt\|txt\|json`, `-o <file>`, `--fuzzy`, `--report`, `--strict` (exit 1 on warnings) |
 | `plan <file.wav> --max-size <size>` | `--max-duration`, `--overlap`, `--min-chunk`, `--ffmpeg`, `--json` |
 
 Exit codes: 0 ok, 1 warnings with `--strict`, 2 usage or input error, 3 no plan possible.
 
 A manifest is JSON: `{ "chunks": [{ "file": "chunk-0.json", "startMs": 0, "endMs": 2600 }, ...] }`, file names relative to the manifest; a `.txt` chunk file is read as plain text.
+
+**SRT/VTT chunk files.** A `.srt` or `.vtt` chunk file in the manifest is read as that format (an explicit `--provider` takes priority), and `normalize(text, { provider: "srt" })` or `"vtt"` does the same in code. `auto` never treats a string as SRT/VTT, so existing text input is unchanged. Cues become segments (a `WEBVTT` header block with lines like `Kind: captions` is skipped, SRT cues without a blank line between them are split, and in VTT the `&amp;`, `&lt;`, `&gt;`, `&nbsp;` references are decoded; an empty cue file gives an empty transcript without a warning); word times are estimated by spreading the words evenly over each cue, so overlap de-duplication is less precise than with `verbose_json` word times. Any other unknown extension that is not valid JSON gets an `UNSUPPORTED_FILE` error listing the supported formats (`.json`, `.txt`, `.srt`, `.vtt`).
 
 ### Screen language
 
@@ -307,7 +309,7 @@ The library works on whatever responses you feed it: call your provider yourself
 
 ## Versions
 
-Semantic Versioning. While the version is 0.x the API may change in a minor release; changes are listed in [CHANGELOG.md](CHANGELOG.md). Current version: 0.2.0.
+Semantic Versioning. While the version is 0.x the API may change in a minor release; changes are listed in [CHANGELOG.md](CHANGELOG.md). Current version: 0.3.0.
 
 ## Development
 
@@ -315,7 +317,7 @@ Needs Node.js 22.12 or newer.
 
 ```bash
 npm install
-npm test            # builds first; 8 test files, 313 tests
+npm test            # builds first; 9 test files, 328 tests
 npm run typecheck
 npm run check:package
 npm run fixtures    # regenerate the practice data (deterministic)
